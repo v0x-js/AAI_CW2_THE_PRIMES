@@ -1,23 +1,36 @@
 //ultimatrix script for NFC, Piezo pressure and led ring
+
+//____________________________________for the librarys__________________________________________
+//NFC Lirbary
 #include <SPI.h>
 #include <MFRC522.h>
 
+//neopixel library
+#include <Adafruit_Neopixel.h>
+
+//______________________________________Definitions______________________________________________
 //NFC Definitions
 #define RST_PIN 9
 #define SS_PIN 10
 
 MFRC522 mfrc522(SS_PIN, RST_PIN);
 
-//Neopixel LED Definitions
-#define LEDPIN X
+//Neopixel LED Definitions----------------------------------------------------------------
+#define LED_PIN 6
+#define LED_COUNT 16
 
-//Piezo Definitons
+Adafruit_Neopixel ring(LED_COUNT, LED_PIN, NEO_RGBW + NEO_KHZ800);
+
+
+//Piezo Definitons------------------------------------------------------------------------
 #define PIEZOTHRESHOLD 5;  // this is the analogue threshold for piezo sensing  
 int PIEZOPIN = 2; 
 int val; 
+//-----------------------------------------------------------------------------------------
+
+//______________________________________Setup_________________________________________________
 
 void setup() {
-  // put your setup code here, to run once:
 
 //NFC/RFID Setup
 serial.begin(9600); //Initialises the serial communication with the computer
@@ -25,10 +38,12 @@ SPI.begin(); //Initialises the SPI Bus
 mfrc522.PCD_Init(); //Initialises the MFRC522 itself
 }
 
+
+//_____________________________________Main Code___________________________________________________
 void loop() {
   // put your main code here, to run repeatedly:
 
-  //NFC Code and Logic
+  //NFC Code and Logic-----------------------------------------------------------------------------
 
   //Looks for new cards
   if ( ! mfrc522.PICC_IsNewCardPresent()) {
