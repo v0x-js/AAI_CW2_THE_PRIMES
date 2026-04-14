@@ -18,5 +18,7 @@ Serial.begin(9600); // Setting the serial baud rate
 
 //send number depending on NFC tag reading and the piezo sensor value exceeding the threshold 
 
-if(val )
+if(val >= PIEZOTHRESHOLD) { 
+  
+}
 }
