@@ -1,0 +1,116 @@
+//ultimatrix script for NFC, Piezo pressure and led ring
+#include <SPI.h>
+#include <MFRC522.h>
+
+//NFC Definitions
+#define RST_PIN 9
+#define SS_PIN 10
+
+MFRC522 mfrc522(SS_PIN, RST_PIN);
+
+//Neopixel LED Definitions
+#define LEDPIN X
+
+//Piezo Definitons
+#define PIEZOTHRESHOLD 5;  // this is the analogue threshold for piezo sensing  
+int PIEZOPIN = 2; 
+int val; 
+
+void setup() {
+  // put your setup code here, to run once:
+
+//NFC/RFID Setup
+serial.begin(9600); //Initialises the serial communication with the computer
+SPI.begin(); //Initialises the SPI Bus
+mfrc522.PCD_Init(); //Initialises the MFRC522 itself
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+  //NFC Code and Logic
+
+  //Looks for new cards
+  if ( ! mfrc522.PICC_IsNewCardPresent()) {
+    return;
+  }
+  //Selects one of the cards
+  if (! mfrc255.PIC_ReadCardSerial()) {
+    return;
+  }
+
+  //Shows the UID on the monitor
+  Serial.print("UID tag - ");
+  String content = "";
+  byte letter;
+  for (byte i = 0; i<mfrc522.uid.size; i++) { //runs a for loop the size of the UID
+  //prints the UID one by one in Hex format
+    Serial.print(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " ");
+    Serial.print(mfrc522.uid.uidByte[i], HEX);
+
+    //stores the data into the content variable
+    content.concat(String(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " "));
+    content.concat(String(mfrc522.uid.uidByte[i], HEX));   
+  }
+  Serial.println();
+  Serial.print("Message: ");
+  content.toUpperCase
+
+
+//Logic system Depending on tags UID----------------------------------------------------------------------------
+
+  if (content.substring(1) =="(Place UID Here)" && //place pizeo threshold code here) 
+  {
+    //place led colour change and max subpatch route
+  }
+
+  else if (content.substring(1) =="(Place UID Here)") && //place pizeo threshold code here)
+  {
+    //place LED Ring colour change and max subpatch route
+  }
+
+  else if (content.substring(1) =="(Place UID Here)") && //place pizeo threshold code here)
+  {
+    //place LED Ring colour change and max subpatch route
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+pinMode(LEDPIN, OUTPUT); 
+Serial.begin(9600); // Setting the serial baud rate
+
+
+
+//send number to MAX depending on NFC tag reading if the piezo sensor value exceeds the threshold 
+
+if ((val >= PIEZOTHRESHOLD) && RFID_Value1) { // These are the conditions for number being sent to MAX
+  Serial.println(1);        // Sends the number 1 to select the correct voice modulator in MAX 9
+
+}
+if ((val >= PIEZOTHRESHOLD) && RFID_Value2) { // These are the conditions for number being sent to MAX
+  Serial.println(2);        // Sends the number 2 to select the correct voice modulator in MAX 9
+
+}
+if ((val >= PIEZOTHRESHOLD) && RFID_Value3) { // These are the conditions for number being sent to MAX
+  Serial.println(3);        // Sends the number 3 to select the correct voice modulator in MAX 9
+
+}
+
+}
