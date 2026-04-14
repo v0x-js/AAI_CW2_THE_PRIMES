@@ -32,10 +32,16 @@ int val;
 
 void setup() {
 
-//NFC/RFID Setup
+//LED Ring Setup------------------------------------------------------------------------------
+ring.begin();
+ring.show();
+ring.setBrightness(50); //can go up to 255
+
+//NFC/RFID Setup------------------------------------------------------------------------------
 serial.begin(9600); //Initialises the serial communication with the computer
 SPI.begin(); //Initialises the SPI Bus
 mfrc522.PCD_Init(); //Initialises the MFRC522 itself
+
 }
 
 
@@ -43,7 +49,17 @@ mfrc522.PCD_Init(); //Initialises the MFRC522 itself
 void loop() {
   // put your main code here, to run repeatedly:
 
-  //NFC Code and Logic-----------------------------------------------------------------------------
+  //Idle LED Ring------------------------------------------------------------------------------------------------------
+  
+  //for loop that runs for however many pixel leds there is (16 in this case)
+  for (int i = 0; i< ring.numPixels(); i++) {
+    ring.setPixelColour(i, (0), (255), (0), (0)); //colour code is in the order of R G B W
+    ring.show();
+    delay(50);
+  }
+
+
+  //NFC Code (Reading and printing the UID)-----------------------------------------------------------------------------
 
   //Looks for new cards
   if ( ! mfrc522.PICC_IsNewCardPresent()) {
@@ -58,7 +74,9 @@ void loop() {
   Serial.print("UID tag - ");
   String content = "";
   byte letter;
-  for (byte i = 0; i<mfrc522.uid.size; i++) { //runs a for loop the size of the UID
+
+  //runs a for loop the size of the UID
+  for (byte i = 0; i<mfrc522.uid.size; i++) { 
   //prints the UID one by one in Hex format
     Serial.print(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " ");
     Serial.print(mfrc522.uid.uidByte[i], HEX);
@@ -88,24 +106,6 @@ void loop() {
   {
     //place LED Ring colour change and max subpatch route
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 pinMode(LEDPIN, OUTPUT); 
