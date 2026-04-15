@@ -1,19 +1,24 @@
 //ultimatrix script for NFC, Piezo pressure and led ring
-
+//code for NFC reading based off of code found in PN532 Example library
 //____________________________________for the librarys__________________________________________
 //NFC Lirbary
+#include <Wire.h>
 #include <SPI.h>
-#include <MFRC522.h>
+#include <Adafruit_PN532.h>
 
 //neopixel library
 #include <Adafruit_Neopixel.h>
 
 //______________________________________Definitions______________________________________________
 //NFC Definitions
-#define RST_PIN 9
-#define SS_PIN 10
+#define PN325_SCK (13)
+#define PN532_MISO (12)
+#define PN532_MOSI (11)
+#define PN532_SS (10)
 
-MFRC522 mfrc522(SS_PIN, RST_PIN);
+//Adafruit_PN532 nfc(PN532_SCK, PN532_MISO, PN532_MOSI, PN532_SS); ignore this this is for a software connection but the arduino uno has hardware connections (keeping it here just in case though)
+Adafruit_PN532 nfc(PN532_SS);
+
 
 //Neopixel LED Definitions----------------------------------------------------------------
 #define LED_PIN 6
@@ -32,15 +37,33 @@ int val;
 
 void setup() {
 
-//LED Ring Setup------------------------------------------------------------------------------
-ring.begin();
-ring.show();
-ring.setBrightness(50); //can go up to 255
+  //LED Ring Setup------------------------------------------------------------------------------
+  ring.begin();
+  ring.show();
+  ring.setBrightness(50); //can go up to 255
 
-//NFC/RFID Setup------------------------------------------------------------------------------
-serial.begin(9600); //Initialises the serial communication with the computer
-SPI.begin(); //Initialises the SPI Bus
-mfrc522.PCD_Init(); //Initialises the MFRC522 itself
+  //NFC/RFID Setup------------------------------------------------------------------------------
+  serial.begin(115200); //Initialises the serial communication with the computer
+  nfc.begin();
+
+  uint32_t versiondata = nfc.getFirmwareVersion();
+  if (! versiondata) {
+    Serial.print("Cannot find PN532 board");
+    while(1);
+  }
+
+  //prints the information of detected PN532 RFID/NFC Module
+  Serial.print("Found chip PN532"); Serial.println((versiondata>>24) & 0xFF, HEX);
+  Serial.print("Firmware ver."); Serial.println((versiondata>>16) & 0xFF, DEC);
+
+  Serial.println("Waiting for a card to be detected :3")
+
+  //different types of tags have different lengths of UID this checks the length is 7bytes which is common to NTA203 tags
+  if (uidLength == 7) {
+    uint8_t data[32];
+    
+    Serial.println("Tag appears to be an NTA203 tag");
+  }
 
 }
 
@@ -61,48 +84,36 @@ void loop() {
 
   //NFC Code (Reading and printing the UID)-----------------------------------------------------------------------------
 
-  //Looks for new cards
-  if ( ! mfrc522.PICC_IsNewCardPresent()) {
-    return;
-  }
-  //Selects one of the cards
-  if (! mfrc255.PIC_ReadCardSerial()) {
-    return;
-  }
+  uint8_t success;
+  uint8_t uid[] = {0, 0, 0, 0, 0, 0, 0 }; //creates variable to store the tags UID
+  uint8_t uidLength; //finds the legnth of the UID
 
-  //Shows the UID on the monitor
-  Serial.print("UID tag - ");
-  String content = "";
-  byte letter;
+  success = nfc.readPassiveTargetID(PN532_MIFARE_ISO014443A, uid, &uidLength);
 
-  //runs a for loop the size of the UID
-  for (byte i = 0; i<mfrc522.uid.size; i++) { 
-  //prints the UID one by one in Hex format
-    Serial.print(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " ");
-    Serial.print(mfrc522.uid.uidByte[i], HEX);
+  if (success) {
+    //information is displayed regarding the detected card
+    Serial.print("ISO14443A Tag Detected!");
+    Serial.print(" UID Length: "); Serial.print(uidLength, DEC); Serial.println("Bytes");
+    Serial.print(" UID Value: ");
+    nfc.PrintHex(uid, uidLength);
+    Serial.print("");
 
-    //stores the data into the content variable
-    content.concat(String(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " "));
-    content.concat(String(mfrc522.uid.uidByte[i], HEX));   
   }
-  Serial.println();
-  Serial.print("Message: ");
-  content.toUpperCase
 
 
 //Logic system Depending on tags UID----------------------------------------------------------------------------
 
-  if (content.substring(1) =="(Place UID Here)" && //place pizeo threshold code here) 
+  if (uid == "(Place UID Here)" && //place pizeo threshold code here) 
   {
     //place led colour change and max subpatch route
   }
 
-  else if (content.substring(1) =="(Place UID Here)") && //place pizeo threshold code here)
+  else if (uid == "(Place UID Here)") && //place pizeo threshold code here)
   {
     //place LED Ring colour change and max subpatch route
   }
 
-  else if (content.substring(1) =="(Place UID Here)") && //place pizeo threshold code here)
+  else if (uid == "(Place UID Here)") && //place pizeo threshold code here)
   {
     //place LED Ring colour change and max subpatch route
   }
