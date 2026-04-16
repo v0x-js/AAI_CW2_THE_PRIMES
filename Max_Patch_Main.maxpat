@@ -13,15 +13,6 @@
         "boxes": [
             {
                 "box": {
-                    "id": "obj-7",
-                    "maxclass": "ezdac~",
-                    "numinlets": 2,
-                    "numoutlets": 0,
-                    "patching_rect": [ 232.0, 855.0, 45.0, 45.0 ]
-                }
-            },
-            {
-                "box": {
                     "id": "obj-37",
                     "maxclass": "newobj",
                     "numinlets": 2,
@@ -156,7 +147,7 @@
                             }
                         ]
                     },
-                    "patching_rect": [ 964.0, 414.0, 109.0, 22.0 ],
+                    "patching_rect": [ 894.0, 455.0, 109.0, 22.0 ],
                     "text": "p Omnitrix Timeout"
                 }
             },
@@ -189,7 +180,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 748.0, 483.0, 151.0, 131.0 ],
+                    "patching_rect": [ 899.0, 595.5, 151.0, 131.0 ],
                     "text": "These subpatches will be used for the purpose of implementating modulation of omnitrix activation noises and clean routing for interacting with Arduino IDE based on the alien chosen by the Ultimatrix ",
                     "textjustification": 1
                 }
@@ -224,7 +215,7 @@
                     "maxclass": "newobj",
                     "numinlets": 2,
                     "numoutlets": 0,
-                    "patching_rect": [ 656.0, 498.0, 35.0, 22.0 ],
+                    "patching_rect": [ 770.5, 505.0, 35.0, 22.0 ],
                     "text": "dac~"
                 }
             },
@@ -420,7 +411,7 @@
                         ],
                         "lines": []
                     },
-                    "patching_rect": [ 882.0, 414.0, 56.0, 22.0 ],
+                    "patching_rect": [ 831.0, 441.0, 56.0, 22.0 ],
                     "text": "p Alien X"
                 }
             },
@@ -430,7 +421,7 @@
                     "maxclass": "newobj",
                     "numinlets": 1,
                     "numoutlets": 1,
-                    "outlettype": [ "" ],
+                    "outlettype": [ "signal" ],
                     "patcher": {
                         "fileversion": 1,
                         "appversion": {
@@ -441,8 +432,41 @@
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 134.0, 134.0, 1000.0, 780.0 ],
+                        "rect": [ 34.0, 77.0, 1213.0, 642.0 ],
                         "boxes": [
+                            {
+                                "box": {
+                                    "id": "obj-6",
+                                    "maxclass": "button",
+                                    "numinlets": 1,
+                                    "numoutlets": 1,
+                                    "outlettype": [ "bang" ],
+                                    "parameter_enable": 0,
+                                    "patching_rect": [ 176.0, 149.0, 24.0, 24.0 ]
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "obj-4",
+                                    "maxclass": "newobj",
+                                    "numinlets": 5,
+                                    "numoutlets": 4,
+                                    "outlettype": [ "signal", "signal", "", "" ],
+                                    "patching_rect": [ 128.0, 220.0, 99.0, 22.0 ],
+                                    "text": "adsr~ 60 220 0 0"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "obj-3",
+                                    "maxclass": "newobj",
+                                    "numinlets": 1,
+                                    "numoutlets": 1,
+                                    "outlettype": [ "signal" ],
+                                    "patching_rect": [ 128.0, 151.0, 38.0, 22.0 ],
+                                    "text": "pink~"
+                                }
+                            },
                             {
                                 "box": {
                                     "comment": "",
@@ -451,7 +475,7 @@
                                     "maxclass": "outlet",
                                     "numinlets": 1,
                                     "numoutlets": 0,
-                                    "patching_rect": [ 110.0, 628.0, 30.0, 30.0 ]
+                                    "patching_rect": [ 128.0, 283.0, 30.0, 30.0 ]
                                 }
                             },
                             {
@@ -463,13 +487,38 @@
                                     "numinlets": 0,
                                     "numoutlets": 1,
                                     "outlettype": [ "bang" ],
-                                    "patching_rect": [ 97.0, 23.0, 30.0, 30.0 ]
+                                    "patching_rect": [ 176.0, 57.0, 30.0, 30.0 ]
                                 }
                             }
                         ],
-                        "lines": []
+                        "lines": [
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-6", 0 ],
+                                    "source": [ "obj-1", 0 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-4", 0 ],
+                                    "source": [ "obj-3", 0 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-2", 0 ],
+                                    "source": [ "obj-4", 0 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-4", 0 ],
+                                    "source": [ "obj-6", 0 ]
+                                }
+                            }
+                        ]
                     },
-                    "patching_rect": [ 778.0, 414.0, 74.0, 22.0 ],
+                    "patching_rect": [ 751.0, 427.0, 74.0, 22.0 ],
                     "text": "p Heat Blast"
                 }
             },
@@ -554,7 +603,7 @@
                     "maxclass": "newobj",
                     "numinlets": 2,
                     "numoutlets": 0,
-                    "patching_rect": [ 131.0, 801.0, 35.0, 22.0 ],
+                    "patching_rect": [ 224.0, 791.0, 35.0, 22.0 ],
                     "text": "dac~"
                 }
             },
@@ -588,7 +637,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "signal" ],
-                    "patching_rect": [ 232.0, 410.0, 45.0, 22.0 ],
+                    "patching_rect": [ 236.0, 404.0, 45.0, 22.0 ],
                     "text": "adc~ 1"
                 }
             },
@@ -772,7 +821,7 @@
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 34.0, 77.0, 1213.0, 642.0 ],
+                        "rect": [ -171.0, 147.0, 1213.0, 642.0 ],
                         "boxes": [
                             {
                                 "box": {
@@ -794,7 +843,6 @@
                                     "numinlets": 1,
                                     "numoutlets": 0,
                                     "patching_rect": [ 204.87805366516113, 594.121967792511, 150.0, 75.0 ],
-                                    "presentation_linecount": 5,
                                     "text": "Double routing - The fire FX goes straight out AND the cracking/hissing goes trhough reverb too to make the voice fit more"
                                 }
                             },
@@ -828,7 +876,7 @@
                                     "maxclass": "comment",
                                     "numinlets": 1,
                                     "numoutlets": 0,
-                                    "patching_rect": [ 992.6829504966736, 54.902443647384644, 150.0, 75.0 ],
+                                    "patching_rect": [ 992.6829504966736, 54.902443647384644, 154.0, 75.0 ],
                                     "text": "REVERB \n- Taken from previous APE project - used to give voice more presence and sound dramatic "
                                 }
                             },
@@ -2232,53 +2280,49 @@
             },
             {
                 "patchline": {
-                    "destination": [ "obj-11", 1 ],
-                    "order": 2,
-                    "source": [ "obj-2", 0 ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [ "obj-11", 0 ],
-                    "order": 3,
-                    "source": [ "obj-2", 0 ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [ "obj-7", 1 ],
-                    "order": 0,
-                    "source": [ "obj-2", 0 ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [ "obj-7", 0 ],
-                    "order": 1,
-                    "source": [ "obj-2", 0 ]
-                }
-            },
-            {
-                "patchline": {
                     "destination": [ "obj-21", 0 ],
                     "source": [ "obj-20", 0 ]
                 }
             },
             {
                 "patchline": {
-                    "destination": [ "obj-22", 0 ],
+                    "destination": [ "obj-22", 1 ],
+                    "order": 0,
                     "source": [ "obj-24", 0 ]
                 }
             },
             {
                 "patchline": {
                     "destination": [ "obj-22", 0 ],
+                    "order": 1,
+                    "source": [ "obj-24", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-22", 1 ],
+                    "order": 0,
                     "source": [ "obj-25", 0 ]
                 }
             },
             {
                 "patchline": {
                     "destination": [ "obj-22", 0 ],
+                    "order": 1,
+                    "source": [ "obj-25", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-22", 1 ],
+                    "order": 0,
+                    "source": [ "obj-26", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-22", 0 ],
+                    "order": 1,
                     "source": [ "obj-26", 0 ]
                 }
             },
@@ -2344,6 +2388,20 @@
                 "patchline": {
                     "destination": [ "obj-26", 0 ],
                     "source": [ "obj-41", 1 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-22", 1 ],
+                    "order": 0,
+                    "source": [ "obj-44", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-22", 0 ],
+                    "order": 1,
+                    "source": [ "obj-44", 0 ]
                 }
             },
             {
