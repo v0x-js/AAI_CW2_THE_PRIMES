@@ -6,6 +6,9 @@ int val; // used to store value of current piezo sensor input to check if thresh
 bool Pressed = false; //variable to say if piezo is being pushed or released
 bool piezoPrevState = false;  //allows for comparison to previous state
 bool piezoStateChange = false; // has there been a change in the state - true or false
+bool piezoRelease = false; 
+
+bool StopData = false; 
 
 void setup() {
   // put your setup code here, to run once:
@@ -16,32 +19,44 @@ void loop() {
   // put your main code here, to run repeatedly:
   val = analogRead(0); //reads the current value of the piezo
 
-  if ( val >= PIEZOTHRESHOLD ) { //checks if the current value is above the threshold
+  if ( val > 5 ) { //checks if the current value is above the threshold
     Pressed = true;
     if (Pressed != piezoPrevState) { //if the comparison is different from the current bool value a state change has occured
       piezoStateChange = true;
-      piezoPrevState = Pressed; //sets the prev pressed state value to the current pressed state value for comparison on the next time the main void loop loops
+      piezoRelease = false; 
     }
+    piezoPrevState = Pressed; //sets the prev pressed state value to the current pressed state value for comparison on the next time the main void loop loops
   }
     //essiential the same as code above but in reverse for when the dial is released from the closed position
-  else if ( val <= PIEZOTHRESHOLD ) {
-    Pressed = true;
-    if (Pressed == piezoPrevState) {
-      piezoStateChange = false;
-      piezoPrevState = Pressed;
+  else if ( val < 5 ) {
+    Pressed = false;
+    if (Pressed != piezoPrevState) {
+      piezoStateChange = true;
+      piezoRelease = true; 
     }
+     piezoPrevState = Pressed;
   }
 
-  if (piezoStateChange == true) {
-    print("Watch is pressed Down");
-    Serial.write(1);
+  if ((Pressed = true) && (piezoStateChange = true) && (piezoRelease = false) && (StopData = false)) {
+    
+    Serial.println(1);
+    StopData = true; 
   }
 
-  else if (piezoStateChange == false) {
-    print("Watch is released");
-    Serial.write(4);
-  }
+  if (StopData = true) {
+    piezoStateChange = false; 
+  } 
 
+
+  if ((Pressed = false) && (piezoStateChange = true) && (piezoRelease = true) && (StopData = true)) {
+  
+    Serial.println(4); 
+    StopData = false; 
+  }
+  
+  if (StopData = false) {
+    piezoStateChange = false;
+  }
 
 
 }
