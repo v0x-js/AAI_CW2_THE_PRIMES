@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 77.0, 1852.0, 921.0 ],
+		"rect" : [ 34.0, 77.0, 1452.0, 921.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
@@ -214,7 +214,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ -31958.0, -31915.0, 1000.0, 780.0 ],
+						"rect" : [ 134.0, 134.0, 1000.0, 780.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"visible" : 1,
 						"boxes" : [ 							{
@@ -224,7 +224,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 437.0, 113.0, 152.0, 103.0 ],
+									"patching_rect" : [ 437.0, 113.0, 155.0, 103.0 ],
 									"text" : "For random modulation we should use a random number generator with limits dependent on how many modulators we have to be able to be ran through the code.",
 									"textjustification" : 1
 								}
@@ -333,8 +333,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "int", "" ],
-					"patching_rect" : [ 864.0, 150.0, 90.0, 22.0 ],
-					"text" : "serial b 115200"
+					"patching_rect" : [ 864.0, 150.0, 77.0, 22.0 ],
+					"text" : "serial b 9600"
 				}
 
 			}
@@ -442,7 +442,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ -31966.0, -31966.0, 1000.0, 973.0 ],
+						"rect" : [ 134.0, 134.0, 1000.0, 973.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"visible" : 1,
 						"boxes" : [ 							{
@@ -558,7 +558,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ -31966.0, -31966.0, 1000.0, 780.0 ],
+						"rect" : [ 134.0, 134.0, 1000.0, 780.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"visible" : 1,
 						"boxes" : [ 							{
@@ -659,7 +659,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ -31966.0, -31966.0, 1000.0, 780.0 ],
+						"rect" : [ 134.0, 134.0, 1000.0, 780.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"visible" : 1,
 						"boxes" : [ 							{
@@ -737,8 +737,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "int", "" ],
-					"patching_rect" : [ 21.0, 144.0, 90.0, 22.0 ],
-					"text" : "serial b 115200"
+					"patching_rect" : [ 21.0, 144.0, 77.0, 22.0 ],
+					"text" : "serial b 9600"
 				}
 
 			}
@@ -879,7 +879,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ -31966.0, -31966.0, 1000.0, 780.0 ],
+						"rect" : [ 134.0, 134.0, 1000.0, 780.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"visible" : 1,
 						"boxes" : [ 							{
@@ -1034,7 +1034,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ -31958.0, -31915.0, 1000.0, 780.0 ],
+						"rect" : [ 134.0, 134.0, 1000.0, 780.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"visible" : 1,
 						"boxes" : [ 							{
