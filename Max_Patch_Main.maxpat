@@ -14,6 +14,190 @@
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-60",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 705.0, 465.0, 76.0, 20.0 ],
+					"text" : "------------->"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-59",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 537.0, 451.0, 150.0, 48.0 ],
+					"text" : "Converts the MAXsymbol to a usable value for our audio path "
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-56",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 792.0, 464.0, 50.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-54",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 864.0, 419.0, 71.0, 22.0 ],
+					"text" : "fromsymbol"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-53",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 705.0, 389.0, 76.0, 20.0 ],
+					"text" : "------------->"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-52",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 531.0, 392.0, 150.0, 34.0 ],
+					"text" : "symbol of ASCI code in MAX "
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-50",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 792.0, 388.0, 50.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-48",
+					"maxclass" : "newobj",
+					"numinlets" : 3,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 864.0, 340.0, 40.0, 22.0 ],
+					"text" : "itoa"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-47",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 966.0, 151.0, 72.0, 20.0 ],
+					"text" : "<-----------"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-45",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1050.0, 144.0, 150.0, 34.0 ],
+					"text" : "Serial Port for receiving values from Arduino "
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-36",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 711.0, 314.0, 76.0, 20.0 ],
+					"text" : "------------->"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-32",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 543.0, 306.0, 150.0, 48.0 ],
+					"text" : "Still in ASCI code after termination of last 2 numbers received "
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-30",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 792.0, 313.0, 50.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-19",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 864.0, 278.0, 61.0, 22.0 ],
+					"text" : "zl group 4"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-16",
+					"maxclass" : "newobj",
+					"numinlets" : 3,
+					"numoutlets" : 3,
+					"outlettype" : [ "bang", "bang", "" ],
+					"patching_rect" : [ 864.0, 214.0, 57.0, 22.0 ],
+					"text" : "sel 13 10"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-15",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 785.0, 187.0, 50.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-44",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -30,7 +214,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 59.0, 107.0, 1000.0, 780.0 ],
+						"rect" : [ -31958.0, -31915.0, 1000.0, 780.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"visible" : 1,
 						"boxes" : [ 							{
@@ -40,7 +224,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 437.0, 113.0, 150.0, 103.0 ],
+									"patching_rect" : [ 437.0, 113.0, 152.0, 103.0 ],
 									"text" : "For random modulation we should use a random number generator with limits dependent on how many modulators we have to be able to be ran through the code.",
 									"textjustification" : 1
 								}
@@ -113,7 +297,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 1458.0, 742.0, 109.0, 22.0 ],
+					"patching_rect" : [ 1649.0, 332.0, 109.0, 22.0 ],
 					"text" : "p Omnitrix Timeout"
 				}
 
@@ -125,7 +309,7 @@
 					"numinlets" : 5,
 					"numoutlets" : 5,
 					"outlettype" : [ "bang", "bang", "bang", "bang", "" ],
-					"patching_rect" : [ 1150.0, 617.0, 80.0, 22.0 ],
+					"patching_rect" : [ 1341.0, 207.0, 80.0, 22.0 ],
 					"text" : "select 1 2 3 4"
 				}
 
@@ -137,7 +321,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 741.0, 130.0, 56.0, 22.0 ],
+					"patching_rect" : [ 864.0, 67.0, 56.0, 22.0 ],
 					"text" : "metro 33"
 				}
 
@@ -149,7 +333,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "int", "" ],
-					"patching_rect" : [ 741.0, 213.0, 90.0, 22.0 ],
+					"patching_rect" : [ 864.0, 150.0, 90.0, 22.0 ],
 					"text" : "serial b 115200"
 				}
 
@@ -161,7 +345,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 892.0, 165.0, 32.0, 22.0 ],
+					"patching_rect" : [ 1015.0, 102.0, 32.0, 22.0 ],
 					"text" : "print"
 				}
 
@@ -174,7 +358,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 741.0, 79.0, 24.0, 24.0 ]
+					"patching_rect" : [ 864.0, 16.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -184,7 +368,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1589.0, 739.0, 56.0, 20.0 ],
+					"patching_rect" : [ 1786.0, 333.0, 56.0, 20.0 ],
 					"text" : "<--------"
 				}
 
@@ -197,7 +381,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1677.0, 717.0, 151.0, 131.0 ],
+					"patching_rect" : [ 1868.0, 307.0, 151.0, 131.0 ],
 					"text" : "These subpatches will be used for the purpose of implementating modulation of omnitrix activation noises and clean routing for interacting with Arduino IDE based on the alien chosen by the Ultimatrix ",
 					"textjustification" : 1
 				}
@@ -210,7 +394,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1095.0, 226.0, 221.0, 27.0 ],
+					"patching_rect" : [ 1306.0, 116.0, 221.0, 27.0 ],
 					"text" : "Omnitrix Activation Bang ",
 					"textjustification" : 1
 				}
@@ -223,7 +407,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 253.0, 233.0, 220.0, 27.0 ],
+					"patching_rect" : [ 148.0, 239.0, 220.0, 27.0 ],
 					"text" : "Voice Modulation ",
 					"textjustification" : 1
 				}
@@ -235,7 +419,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1150.0, 826.0, 35.0, 22.0 ],
+					"patching_rect" : [ 1341.0, 416.0, 35.0, 22.0 ],
 					"text" : "dac~"
 				}
 
@@ -258,7 +442,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ -31958.0, -31915.0, 1000.0, 973.0 ],
+						"rect" : [ -31966.0, -31966.0, 1000.0, 973.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"visible" : 1,
 						"boxes" : [ 							{
@@ -351,7 +535,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 1150.0, 742.0, 91.0, 22.0 ],
+					"patching_rect" : [ 1341.0, 332.0, 91.0, 22.0 ],
 					"text" : "p [REDACTED]"
 				}
 
@@ -374,7 +558,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 134.0, 134.0, 1000.0, 780.0 ],
+						"rect" : [ -31966.0, -31966.0, 1000.0, 780.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"visible" : 1,
 						"boxes" : [ 							{
@@ -452,7 +636,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 1376.0, 742.0, 56.0, 22.0 ],
+					"patching_rect" : [ 1567.0, 332.0, 56.0, 22.0 ],
 					"text" : "p Alien X"
 				}
 
@@ -475,7 +659,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ -31958.0, -31915.0, 1000.0, 780.0 ],
+						"rect" : [ -31966.0, -31966.0, 1000.0, 780.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"visible" : 1,
 						"boxes" : [ 							{
@@ -507,7 +691,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 1272.0, 742.0, 74.0, 22.0 ],
+					"patching_rect" : [ 1463.0, 332.0, 74.0, 22.0 ],
 					"text" : "p Heat Blast"
 				}
 
@@ -518,7 +702,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 584.0, 643.0, 69.0, 20.0 ],
+					"patching_rect" : [ 344.0, 645.5, 69.0, 20.0 ],
 					"text" : "<----------"
 				}
 
@@ -530,7 +714,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 694.0, 584.0, 150.0, 103.0 ],
+					"patching_rect" : [ 439.0, 592.0, 150.0, 103.0 ],
 					"text" : "We have sent data from Arduino NFC tags which decide which of the subpatches the microphone will be sent through for voice modulation "
 				}
 
@@ -600,7 +784,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 344.0, 793.0, 35.0, 22.0 ],
+					"patching_rect" : [ 239.0, 799.0, 35.0, 22.0 ],
 					"text" : "dac~"
 				}
 
@@ -612,7 +796,7 @@
 					"numinlets" : 4,
 					"numoutlets" : 4,
 					"outlettype" : [ "bang", "bang", "bang", "" ],
-					"patching_rect" : [ 344.0, 642.0, 70.0, 22.0 ],
+					"patching_rect" : [ 239.0, 648.0, 70.0, 22.0 ],
 					"text" : "select 1 2 3"
 				}
 
@@ -626,7 +810,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 345.0, 372.0, 22.0, 140.0 ]
+					"patching_rect" : [ 240.0, 378.0, 22.0, 140.0 ]
 				}
 
 			}
@@ -636,7 +820,7 @@
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 288.0, 372.0, 45.0, 45.0 ]
+					"patching_rect" : [ 183.0, 378.0, 45.0, 45.0 ]
 				}
 
 			}
@@ -647,7 +831,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 345.0, 283.0, 45.0, 22.0 ],
+					"patching_rect" : [ 240.0, 289.0, 45.0, 22.0 ],
 					"text" : "adc~ 1"
 				}
 
@@ -658,7 +842,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 623.0, 710.0, 56.0, 20.0 ],
+					"patching_rect" : [ 518.0, 716.0, 56.0, 20.0 ],
 					"text" : "<--------"
 				}
 
@@ -671,7 +855,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 719.0, 698.0, 151.0, 117.0 ],
+					"patching_rect" : [ 596.0, 674.0, 151.0, 117.0 ],
 					"text" : "These subpatches will be used for the purpose of implementating multiple voice changers and clean routing for interacting with Arduino IDE based on the alien chosen by the Ultimatrix ",
 					"textjustification" : 1
 				}
@@ -695,7 +879,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 134.0, 134.0, 1000.0, 780.0 ],
+						"rect" : [ -31966.0, -31966.0, 1000.0, 780.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"visible" : 1,
 						"boxes" : [ 							{
@@ -727,7 +911,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 344.0, 709.0, 91.0, 22.0 ],
+					"patching_rect" : [ 239.0, 715.0, 91.0, 22.0 ],
 					"text" : "p [REDACTED]"
 				}
 
@@ -827,7 +1011,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 537.0, 709.0, 56.0, 22.0 ],
+					"patching_rect" : [ 432.0, 715.0, 56.0, 22.0 ],
 					"text" : "p Alien X"
 				}
 
@@ -850,7 +1034,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 134.0, 134.0, 1000.0, 780.0 ],
+						"rect" : [ -31958.0, -31915.0, 1000.0, 780.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"visible" : 1,
 						"boxes" : [ 							{
@@ -882,7 +1066,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 449.0, 709.0, 74.0, 22.0 ],
+					"patching_rect" : [ 344.0, 715.0, 74.0, 22.0 ],
 					"text" : "p Heat Blast"
 				}
 
@@ -957,8 +1141,38 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-19", 0 ],
+					"source" : [ "obj-16", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-19", 0 ],
+					"source" : [ "obj-16", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-20", 0 ],
 					"source" : [ "obj-18", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-30", 1 ],
+					"order" : 1,
+					"source" : [ "obj-19", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-48", 0 ],
+					"order" : 0,
+					"source" : [ "obj-19", 0 ]
 				}
 
 			}
@@ -994,6 +1208,22 @@
 				"patchline" : 				{
 					"destination" : [ "obj-22", 0 ],
 					"source" : [ "obj-26", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-15", 1 ],
+					"order" : 1,
+					"source" : [ "obj-27", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-16", 0 ],
+					"order" : 0,
+					"source" : [ "obj-27", 0 ]
 				}
 
 			}
@@ -1050,6 +1280,29 @@
 				"patchline" : 				{
 					"destination" : [ "obj-26", 0 ],
 					"source" : [ "obj-41", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-50", 0 ],
+					"order" : 1,
+					"source" : [ "obj-48", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-54", 0 ],
+					"order" : 0,
+					"source" : [ "obj-48", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-56", 0 ],
+					"source" : [ "obj-54", 0 ]
 				}
 
 			}
