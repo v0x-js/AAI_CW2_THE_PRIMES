@@ -10,15 +10,81 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 77.0, 1452.0, 921.0 ],
+		"rect" : [ 34.0, 77.0, 1852.0, 921.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-31",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1118.0, 165.0, 150.0, 34.0 ],
+					"text" : "Sources for Arduino To Max Communcation - "
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patcher" : 					{
+						"fileversion" : 1,
+						"appversion" : 						{
+							"major" : 9,
+							"minor" : 0,
+							"revision" : 7,
+							"architecture" : "x64",
+							"modernui" : 1
+						}
+,
+						"classnamespace" : "box",
+						"rect" : [ 114.0, 151.0, 1000.0, 780.0 ],
+						"gridsize" : [ 15.0, 15.0 ],
+						"boxes" : [ 							{
+								"box" : 								{
+									"comment" : "",
+									"id" : "obj-2",
+									"index" : 1,
+									"maxclass" : "outlet",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 105.0, 635.0, 30.0, 30.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"comment" : "",
+									"id" : "obj-1",
+									"index" : 1,
+									"maxclass" : "inlet",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 105.0, 71.0, 30.0, 30.0 ]
+								}
+
+							}
+ ],
+						"lines" : [  ]
+					}
+,
+					"patching_rect" : [ 625.0, 985.0, 70.0, 22.0 ],
+					"text" : "p Dry Voice"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-60",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 705.0, 465.0, 76.0, 20.0 ],
+					"patching_rect" : [ 844.0, 511.0, 76.0, 20.0 ],
 					"text" : "------------->"
 				}
 
@@ -30,7 +96,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 537.0, 451.0, 150.0, 48.0 ],
+					"patching_rect" : [ 676.0, 497.0, 150.0, 48.0 ],
 					"text" : "Converts the MAXsymbol to a usable value for our audio path "
 				}
 
@@ -42,7 +108,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 792.0, 464.0, 50.0, 22.0 ]
+					"patching_rect" : [ 931.0, 510.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -53,7 +119,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 864.0, 419.0, 71.0, 22.0 ],
+					"patching_rect" : [ 1003.0, 465.0, 71.0, 22.0 ],
 					"text" : "fromsymbol"
 				}
 
@@ -64,7 +130,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 705.0, 389.0, 76.0, 20.0 ],
+					"patching_rect" : [ 844.0, 435.0, 76.0, 20.0 ],
 					"text" : "------------->"
 				}
 
@@ -76,7 +142,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 531.0, 392.0, 150.0, 34.0 ],
+					"patching_rect" : [ 670.0, 438.0, 150.0, 34.0 ],
 					"text" : "symbol of ASCI code in MAX "
 				}
 
@@ -88,7 +154,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 792.0, 388.0, 50.0, 22.0 ]
+					"patching_rect" : [ 931.0, 434.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -99,7 +165,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 864.0, 340.0, 40.0, 22.0 ],
+					"patching_rect" : [ 1003.0, 386.0, 40.0, 22.0 ],
 					"text" : "itoa"
 				}
 
@@ -110,8 +176,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 966.0, 151.0, 72.0, 20.0 ],
-					"text" : "<-----------"
+					"patching_rect" : [ 913.0, 197.0, 72.0, 20.0 ],
+					"text" : "----------->"
 				}
 
 			}
@@ -122,7 +188,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1050.0, 144.0, 150.0, 34.0 ],
+					"patching_rect" : [ 738.0, 190.0, 150.0, 34.0 ],
 					"text" : "Serial Port for receiving values from Arduino "
 				}
 
@@ -133,7 +199,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 711.0, 314.0, 76.0, 20.0 ],
+					"patching_rect" : [ 850.0, 360.0, 76.0, 20.0 ],
 					"text" : "------------->"
 				}
 
@@ -145,7 +211,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 543.0, 306.0, 150.0, 48.0 ],
+					"patching_rect" : [ 682.0, 352.0, 150.0, 48.0 ],
 					"text" : "Still in ASCI code after termination of last 2 numbers received "
 				}
 
@@ -157,7 +223,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 792.0, 313.0, 50.0, 22.0 ]
+					"patching_rect" : [ 931.0, 359.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -168,7 +234,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 864.0, 278.0, 61.0, 22.0 ],
+					"patching_rect" : [ 1003.0, 324.0, 61.0, 22.0 ],
 					"text" : "zl group 4"
 				}
 
@@ -180,7 +246,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "bang", "" ],
-					"patching_rect" : [ 864.0, 214.0, 57.0, 22.0 ],
+					"patching_rect" : [ 1003.0, 260.0, 57.0, 22.0 ],
 					"text" : "sel 13 10"
 				}
 
@@ -192,7 +258,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 785.0, 187.0, 50.0, 22.0 ]
+					"patching_rect" : [ 924.0, 233.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -274,7 +340,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"outlettype" : [ "bang" ],
 									"patching_rect" : [ 116.0, 91.0, 30.0, 30.0 ]
 								}
 
@@ -297,7 +363,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 1649.0, 332.0, 109.0, 22.0 ],
+					"patching_rect" : [ 1556.0, 880.0, 109.0, 22.0 ],
 					"text" : "p Omnitrix Timeout"
 				}
 
@@ -309,7 +375,7 @@
 					"numinlets" : 5,
 					"numoutlets" : 5,
 					"outlettype" : [ "bang", "bang", "bang", "bang", "" ],
-					"patching_rect" : [ 1341.0, 207.0, 80.0, 22.0 ],
+					"patching_rect" : [ 1248.0, 747.0, 80.0, 22.0 ],
 					"text" : "select 1 2 3 4"
 				}
 
@@ -321,7 +387,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 864.0, 67.0, 56.0, 22.0 ],
+					"patching_rect" : [ 1003.0, 113.0, 56.0, 22.0 ],
 					"text" : "metro 33"
 				}
 
@@ -333,7 +399,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "int", "" ],
-					"patching_rect" : [ 864.0, 150.0, 77.0, 22.0 ],
+					"patching_rect" : [ 1003.0, 196.0, 77.0, 22.0 ],
 					"text" : "serial b 9600"
 				}
 
@@ -345,7 +411,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1015.0, 102.0, 32.0, 22.0 ],
+					"patching_rect" : [ 1079.0, 141.0, 32.0, 22.0 ],
 					"text" : "print"
 				}
 
@@ -358,7 +424,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 864.0, 16.0, 24.0, 24.0 ]
+					"patching_rect" : [ 1003.0, 62.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -368,8 +434,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1786.0, 333.0, 56.0, 20.0 ],
-					"text" : "<--------"
+					"patching_rect" : [ 1185.0, 881.0, 56.0, 20.0 ],
+					"text" : "-------->"
 				}
 
 			}
@@ -381,7 +447,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1868.0, 307.0, 151.0, 131.0 ],
+					"patching_rect" : [ 1028.0, 831.0, 151.0, 131.0 ],
 					"text" : "These subpatches will be used for the purpose of implementating modulation of omnitrix activation noises and clean routing for interacting with Arduino IDE based on the alien chosen by the Ultimatrix ",
 					"textjustification" : 1
 				}
@@ -394,7 +460,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1306.0, 116.0, 221.0, 27.0 ],
+					"patching_rect" : [ 1169.0, 633.0, 221.0, 27.0 ],
 					"text" : "Omnitrix Activation Bang ",
 					"textjustification" : 1
 				}
@@ -407,7 +473,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 148.0, 239.0, 220.0, 27.0 ],
+					"patching_rect" : [ 279.0, 597.0, 220.0, 27.0 ],
 					"text" : "Voice Modulation ",
 					"textjustification" : 1
 				}
@@ -419,7 +485,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1341.0, 416.0, 35.0, 22.0 ],
+					"patching_rect" : [ 1248.0, 964.0, 35.0, 22.0 ],
 					"text" : "dac~"
 				}
 
@@ -535,7 +601,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 1341.0, 332.0, 91.0, 22.0 ],
+					"patching_rect" : [ 1248.0, 880.0, 91.0, 22.0 ],
 					"text" : "p [REDACTED]"
 				}
 
@@ -636,7 +702,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 1567.0, 332.0, 56.0, 22.0 ],
+					"patching_rect" : [ 1474.0, 880.0, 56.0, 22.0 ],
 					"text" : "p Alien X"
 				}
 
@@ -691,7 +757,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 1463.0, 332.0, 74.0, 22.0 ],
+					"patching_rect" : [ 1370.0, 880.0, 74.0, 22.0 ],
 					"text" : "p Heat Blast"
 				}
 
@@ -702,7 +768,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 344.0, 645.5, 69.0, 20.0 ],
+					"patching_rect" : [ 471.0, 916.0, 69.0, 20.0 ],
 					"text" : "<----------"
 				}
 
@@ -714,7 +780,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 439.0, 592.0, 150.0, 103.0 ],
+					"patching_rect" : [ 579.0, 864.0, 150.0, 103.0 ],
 					"text" : "We have sent data from Arduino NFC tags which decide which of the subpatches the microphone will be sent through for voice modulation "
 				}
 
@@ -725,7 +791,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 21.0, 193.0, 32.0, 22.0 ],
+					"patching_rect" : [ 107.0, 200.0, 32.0, 22.0 ],
 					"text" : "print"
 				}
 
@@ -737,7 +803,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "int", "" ],
-					"patching_rect" : [ 21.0, 144.0, 77.0, 22.0 ],
+					"patching_rect" : [ 107.0, 151.0, 77.0, 22.0 ],
 					"text" : "serial b 9600"
 				}
 
@@ -749,7 +815,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 148.0, 60.0, 32.0, 22.0 ],
+					"patching_rect" : [ 234.0, 67.0, 32.0, 22.0 ],
 					"text" : "print"
 				}
 
@@ -762,7 +828,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 21.0, 27.0, 24.0, 24.0 ]
+					"patching_rect" : [ 107.0, 34.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -773,7 +839,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 53.0, 60.0, 58.0, 22.0 ],
+					"patching_rect" : [ 139.0, 67.0, 58.0, 22.0 ],
 					"text" : "loadbang"
 				}
 
@@ -784,7 +850,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 239.0, 799.0, 35.0, 22.0 ],
+					"patching_rect" : [ 366.0, 1069.0, 35.0, 22.0 ],
 					"text" : "dac~"
 				}
 
@@ -793,11 +859,11 @@
 				"box" : 				{
 					"id" : "obj-10",
 					"maxclass" : "newobj",
-					"numinlets" : 4,
-					"numoutlets" : 4,
-					"outlettype" : [ "bang", "bang", "bang", "" ],
-					"patching_rect" : [ 239.0, 648.0, 70.0, 22.0 ],
-					"text" : "select 1 2 3"
+					"numinlets" : 5,
+					"numoutlets" : 5,
+					"outlettype" : [ "bang", "bang", "bang", "bang", "" ],
+					"patching_rect" : [ 366.0, 918.0, 80.0, 22.0 ],
+					"text" : "select 1 2 3 4"
 				}
 
 			}
@@ -810,17 +876,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 240.0, 378.0, 22.0, 140.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-7",
-					"maxclass" : "ezdac~",
-					"numinlets" : 2,
-					"numoutlets" : 0,
-					"patching_rect" : [ 183.0, 378.0, 45.0, 45.0 ]
+					"patching_rect" : [ 366.0, 714.0, 22.0, 140.0 ]
 				}
 
 			}
@@ -831,7 +887,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 240.0, 289.0, 45.0, 22.0 ],
+					"patching_rect" : [ 366.0, 644.0, 45.0, 22.0 ],
 					"text" : "adc~ 1"
 				}
 
@@ -842,7 +898,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 518.0, 716.0, 56.0, 20.0 ],
+					"patching_rect" : [ 717.0, 986.0, 56.0, 20.0 ],
 					"text" : "<--------"
 				}
 
@@ -855,7 +911,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 596.0, 674.0, 151.0, 117.0 ],
+					"patching_rect" : [ 788.0, 938.0, 151.0, 117.0 ],
 					"text" : "These subpatches will be used for the purpose of implementating multiple voice changers and clean routing for interacting with Arduino IDE based on the alien chosen by the Ultimatrix ",
 					"textjustification" : 1
 				}
@@ -911,7 +967,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 239.0, 715.0, 91.0, 22.0 ],
+					"patching_rect" : [ 366.0, 985.0, 91.0, 22.0 ],
 					"text" : "p [REDACTED]"
 				}
 
@@ -1011,7 +1067,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 432.0, 715.0, 56.0, 22.0 ],
+					"patching_rect" : [ 559.0, 985.0, 56.0, 22.0 ],
 					"text" : "p Alien X"
 				}
 
@@ -1066,7 +1122,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 344.0, 715.0, 74.0, 22.0 ],
+					"patching_rect" : [ 471.0, 985.0, 74.0, 22.0 ],
 					"text" : "p Heat Blast"
 				}
 
@@ -1082,7 +1138,7 @@
 					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 137.0, 1155.0, 724.0, 616.0 ],
+					"patching_rect" : [ 195.0, 567.0, 794.0, 626.0 ],
 					"proportion" : 0.5
 				}
 
@@ -1098,13 +1154,27 @@
 					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 961.0, 1155.0, 724.0, 616.0 ],
+					"patching_rect" : [ 1014.0, 567.0, 795.0, 626.0 ],
 					"proportion" : 0.5
 				}
 
 			}
  ],
 		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-11", 0 ],
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-10", 3 ]
+				}
+
+			}
+, 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-10", 1 ]
@@ -1285,6 +1355,20 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-44", 0 ],
+					"source" : [ "obj-41", 3 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-22", 0 ],
+					"source" : [ "obj-44", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-50", 0 ],
 					"order" : 1,
 					"source" : [ "obj-48", 0 ]
@@ -1308,16 +1392,23 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-7", 0 ],
+					"destination" : [ "obj-10", 0 ],
 					"order" : 1,
-					"source" : [ "obj-6", 0 ]
+					"source" : [ "obj-56", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-41", 0 ],
+					"order" : 0,
+					"source" : [ "obj-56", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-9", 0 ],
-					"order" : 0,
 					"source" : [ "obj-6", 0 ]
 				}
 
@@ -1331,7 +1422,14 @@
 			}
  ],
 		"dependency_cache" : [  ],
-		"autosave" : 0
+		"autosave" : 0,
+		"boxgroups" : [ 			{
+				"boxes" : [ "obj-35", "obj-33", "obj-6", "obj-9", "obj-14", "obj-17", "obj-10", "obj-8", "obj-2", "obj-3", "obj-4", "obj-5", "obj-1", "obj-11" ]
+			}
+, 			{
+				"boxes" : [ "obj-39", "obj-42", "obj-38", "obj-43", "obj-24", "obj-22", "obj-41", "obj-26", "obj-25", "obj-44" ]
+			}
+ ]
 	}
 
 }
