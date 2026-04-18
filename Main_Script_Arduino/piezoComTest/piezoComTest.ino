@@ -19,7 +19,7 @@ void loop() {
   if ( val > 5 ) { //checks if the current value is above the threshold
     Pressed = true;
     piezoStateChange = true;
-    }
+  }
 
 
   if ( val < 5 ) {
@@ -28,7 +28,7 @@ void loop() {
   }
   
 
-  if ((Pressed = true) && (piezoStateChange = true) ) {
+  if ((Pressed == true) && (piezoStateChange == true) ) {
     
     Serial.println(1);
     delay(300); 
