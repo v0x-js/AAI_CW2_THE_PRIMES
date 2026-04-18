@@ -39,7 +39,7 @@ void loop() {
     Serial.println(1);
   }
 
-  if ((Pressed = false) && (piezoStateChange = false)) {
+  if ((Pressed = false) && (piezoStateChange = true)) {
     Serial.println(4); 
   }
 }
