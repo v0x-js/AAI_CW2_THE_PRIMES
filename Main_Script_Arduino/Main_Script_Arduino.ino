@@ -100,6 +100,7 @@ void loop() {
     Serial.print(" UID Value: ");
     nfc.PrintHex(uid, uidLength);
     Serial.print("");
+  }
 
  //different types of tags have different lengths of UID this checks the length is 7bytes which is common to NTA203 tags
   if (uidLength == 7) {
@@ -107,7 +108,7 @@ void loop() {
     
     Serial.println("Tag appears to be an NTA203 tag");
   }
-  }
+
 
 
 //Logic system Depending on tags UID----------------------------------------------------------------------------
@@ -115,38 +116,36 @@ void loop() {
   //piezo state logic
   val = analogRead(0); //reads the current value of the piezo
 
-  if ( val >= PIEZOTHRESHOLD ) { //checks if the current value is above the threshold
+  if ( val > 5 ) { //checks if the current value is above the threshold
     Pressed = true;
-    if (Pressed != piezoPrevState) { //if the comparison is different from the current bool value a state change has occured
-      piezoStateChange = true;
-      piezoPrevState = Pressed; //sets the prev pressed state value to the current pressed state value for comparison on the next time the main void loop loops
-    }
+    piezoStateChange = true;
   }
-    //essiential the same as code above but in reverse for when the dial is released from the closed position
-  else if ( val <= PIEZOTHRESHOLD ) {
-    Pressed = true;
-    if (Pressed == piezoPrevState) {
-      piezoStateChange = false;
-      piezoPrevState = Pressed;
-    }
+
+
+  if ( val < 5 ) {
+    Pressed = false;
+    piezoStateChange = true;
   }
   
-  if (uid == "(Place UID Here)" && piezoStateChange == true) {
+  if ((uid == "(Place UID Here)") && (piezoStateChange == true) &&(piezoStateChange == true)) {
 
     //place led colour change and max subpatch route
+    Serial.println(1);
+    delay(300);
 
-    if (piezoStateChange == false) { //the watch dial is in the up position whenever the state change is false 
-      //slector 4 for timout
-    
-    }
   }
 
   else if (uid == "(Place UID Here)" && piezoStateChange == true) {
     //place LED Ring colour change and max subpatch route
+    Serial.println(2);
+    delay(300);
+
   }
 
   else if (uid == "(Place UID Here)" && piezoStateChange == true) {
     //place LED Ring colour change and max subpatch route
+    Serial.println(2);
+    delay(300);
   }
 
 
