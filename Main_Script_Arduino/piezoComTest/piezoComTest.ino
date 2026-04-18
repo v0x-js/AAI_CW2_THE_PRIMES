@@ -12,7 +12,7 @@ bool StopData = false;
 
 void setup() {
   // put your setup code here, to run once:
-
+  Serial.begin(9600);
 }
 
 void loop() {
@@ -25,17 +25,17 @@ void loop() {
       piezoStateChange = true;
       piezoRelease = false; 
     }
-    piezoPrevState = Pressed; //sets the prev pressed state value to the current pressed state value for comparison on the next time the main void loop loops
+  //  piezoPrevState = Pressed; //sets the prev pressed state value to the current pressed state value for comparison on the next time the main void loop loops
   }
     //essiential the same as code above but in reverse for when the dial is released from the closed position
-  else if ( val < 5 ) {
+  if ( val < 5 ) {
     Pressed = false;
-    if (Pressed != piezoPrevState) {
+    if (Pressed == piezoPrevState) {
       piezoStateChange = true;
       piezoRelease = true; 
     }
-     piezoPrevState = Pressed;
   }
+<<<<<<< Updated upstream
 
   if ((Pressed = true) && (piezoStateChange = true) && (piezoRelease = false) && (StopData = false)) {
     
@@ -59,5 +59,11 @@ void loop() {
   }
 
 
+=======
+  if ((Pressed == true) && (piezoStateChange == true)) {
+    Serial.println(1);
+    delay(300);
+  } 
+>>>>>>> Stashed changes
 }
 
