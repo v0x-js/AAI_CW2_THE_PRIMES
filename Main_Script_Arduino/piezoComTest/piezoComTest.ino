@@ -9,7 +9,7 @@ bool piezoStateChange = false; // has there been a change in the state - true or
 
 void setup() {
   // put your setup code here, to run once:
-  Serial.begin(9600);
+  Serial.begin(115200);
 }
 
 void loop() {
@@ -30,7 +30,7 @@ void loop() {
 
   if ((Pressed == true) && (piezoStateChange == true) ) {
     
-    Serial.println(1);
+    Serial.println(1); 
     delay(300); 
   }
 }
