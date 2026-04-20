@@ -10,7 +10,12 @@
 
 //______________________________________Definitions______________________________________________
 
+
+
 //NFC Definitions, defining the pins for the NFC Reader
+#define PN532_IRQ (2)
+#define PN532_RESET (3)
+
 Adafruit_PN532 nfc(PN532_IRQ, PN532_RESET); //defining the relationship/connection between the arduino board and the PN532
 
 
@@ -18,9 +23,10 @@ Adafruit_PN532 nfc(PN532_IRQ, PN532_RESET); //defining the relationship/connecti
 #define LED_PIN 6
 #define LED_COUNT 16
 bool flashOnce = false;
+bool idle = true;
 
 // create function for the LED ring
-Adafruit_NeoPixel ring(LED_COUNT, LED_PIN, NEO_RGBW + NEO_KHZ800); //number of LEDs on ring, pin connection, define specific model (RGBW), define data rate
+Adafruit_NeoPixel ring(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800); //number of LEDs on ring, pin connection, define specific model (RGBW), define data rate
 
 
 //Piezo Definitons------------------------------------------------------------------------
@@ -58,6 +64,57 @@ void setup() {
   }
 }
 
+void idleLED(){
+  for(int i = 0; i < ring.numPixels(); i++){
+  ring.setPixelColor(i, ring.Color(0, 225, 0));
+  ring.show();
+  delay(100);
+  }
+  delay(100);
+  //for loop that runs for however many pixel leds there is (16 in this case), runs all individual LEDs sequentially and turns them off in the same order as previous loop
+  for(int j = 0; j < ring.numPixels(); j++){
+    ring.setPixelColor(j, ring.Color(0, 0, 0));
+    ring.show();
+    delay(100);
+  }
+}
+
+void selectedLED(uint32_t color) {
+  
+   if (flashOnce != true) {
+
+      ring.fill(color);
+      ring.show();
+      delay(150);
+
+      ring.fill(ring.Color(0, 0, 0));
+      ring.show();
+      delay(150);
+
+      ring.fill(color);
+      ring.show();
+      delay(150);
+
+      ring.fill(ring.Color(0, 0, 0));
+      ring.show();
+      delay(150);
+      flashOnce = true;
+    }
+  
+    for(int i = 0; i < ring.numPixels(); i++){
+      ring.setPixelColor(i, color);
+      ring.show();
+      delay(100);
+    }
+    delay(100);
+    for(int i = 0; i < ring.numPixels(); i++){
+      ring.setPixelColor(i, ring.Color(0, 0, 0));
+      ring.show();
+      delay(100);
+    }
+  }
+
+
 
 //_____________________________________Main Code___________________________________________________
 void loop() {
@@ -65,21 +122,7 @@ void loop() {
 
   //Idle LED Ring------------------------------------------------------------------------------------------------------
   
-  //for loop that runs for however many pixel leds there is (16 in this case), runs all individual LEDs sequentially
-  for(int i = 0; i < ring.numPixels(); i++){
-    ring.setPixelColor(i, 0, 0, 255, 150);
-    ring.show();
-    delay(100);
-  }
-  delay(100);
-
-   //for loop that runs for however many pixel leds there is (16 in this case), runs all individual LEDs sequentially and turns them off in the same order as previous loop
-  for(int i = 0; i < ring.numPixels(); i++){
-    ring.setPixelColor(i, 0, 0, 0, 0);
-    ring.show();
-    delay(100);
-  }
-
+  idleLED();
 
 
   //NFC Code (Reading and printing the UID)-----------------------------------------------------------------------------
@@ -92,7 +135,7 @@ void loop() {
 
 //Logic system Depending on tags UID----------------------------------------------------------------------------
   
-  //piezo state logic
+  //piezo state logic -------------------------------------------------------------------------------------------------
   val = analogRead(0); //reads the current value of the piezo
 
   if ( val > 3 ) { //checks if the current value is above the threshold
@@ -100,50 +143,23 @@ void loop() {
     piezoStateChange = true;
   }
 
-
   if ( val < 3 ) {
     Pressed = false;
     piezoStateChange = true;
   }
   
+
+//-----------------------------------------------------------------------------------------------------------------------------
+
   if ((uid == "(Place UID Here)") && (piezoStateChange == true) &&(piezoStateChange == true)) {
 
+    selectedLED(ring.Color(225, 165, 0));
 
     //Sends message to max of what input to use
     Serial.println(1);
     delay(300);
 
     //LED Rings flash between Orange and white
-    if (flashOnce != true) {
-      ring.fill(ring.Color(255, 165, 0));
-      ring.show();
-      delay(150);
-
-      ring.fill(ring.Color(0, 0, 0));
-      ring.show();
-      delay(150);
-
-      ring.fill(ring.Color(255, 165, 0));
-      ring.show();
-      delay(150);
-
-      ring.fill(ring.Color(0, 0, 0));
-      ring.show();
-      delay(150);
-      flashOnce = true;
-    }
-  
-    for(int i = 0; i < ring.numPixels(); i++){
-      ring.setPixelColor(i, 225, 165, 0, 150);
-      ring.show();
-      delay(100);
-    }
-    delay(100);
-    for(int i = 0; i < ring.numPixels(); i++){
-      ring.setPixelColor(i, 0, 0, 0, 0);
-      ring.show();
-      delay(100);
-    }
   }
 
   else if (uid == "(Place UID Here)" && piezoStateChange == true) {
@@ -158,8 +174,5 @@ void loop() {
     Serial.println(2);
     delay(300);
   }
-
-
-
-
 }
+
