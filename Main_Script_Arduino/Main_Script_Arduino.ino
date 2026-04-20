@@ -3,26 +3,21 @@
 //____________________________________for the librarys__________________________________________
 //NFC Lirbary
 #include <Wire.h>
-#include <SPI.h>
 #include <Adafruit_PN532.h>
 
 //neopixel library
 #include <Adafruit_NeoPixel.h>
 
 //______________________________________Definitions______________________________________________
-//NFC Definitions, defining the pins for the NFC Reader
-#define PN325_SCK (13)
-#define PN532_MISO (12)
-#define PN532_MOSI (11)
-#define PN532_SS (10)
 
-//Adafruit_PN532 nfc(PN532_SCK, PN532_MISO, PN532_MOSI, PN532_SS); ignore this this is for a software connection but the arduino uno has hardware connections (keeping it here just in case though)
-Adafruit_PN532 nfc(PN532_SS); //defining the relationship/connection between the arduino board and the PN532
+//NFC Definitions, defining the pins for the NFC Reader
+Adafruit_PN532 nfc(PN532_IRQ, PN532_RESET); //defining the relationship/connection between the arduino board and the PN532
 
 
 //NeoPixel LED Definitions----------------------------------------------------------------
 #define LED_PIN 6
 #define LED_COUNT 16
+bool flashOnce = false;
 
 // create function for the LED ring
 Adafruit_NeoPixel ring(LED_COUNT, LED_PIN, NEO_RGBW + NEO_KHZ800); //number of LEDs on ring, pin connection, define specific model (RGBW), define data rate
@@ -57,17 +52,10 @@ void setup() {
 
  //constant check for nfc board being connected to notify of error
   uint32_t versiondata = nfc.getFirmwareVersion();
-  if (! versiondata) {
+  if (!versiondata) {
     Serial.print("Cannot find PN532 board");
     while(1);
   }
-
-  //prints the information of detected PN532 RFID/NFC Module
-  Serial.print("Found chip PN532"); Serial.println((versiondata>>24) & 0xFF, HEX);
-  Serial.print("Firmware ver."); Serial.println((versiondata>>16) & 0xFF, DEC);
-
-  Serial.println("Waiting for a card to be detected :3");
-
 }
 
 
@@ -78,11 +66,20 @@ void loop() {
   //Idle LED Ring------------------------------------------------------------------------------------------------------
   
   //for loop that runs for however many pixel leds there is (16 in this case), runs all individual LEDs sequentially
-  for (int i = 0; i< ring.numPixels(); i++) {
-    ring.setPixelColor(i, (0), (255), (0), (0)); //colour code is in the order of R G B W
+  for(int i = 0; i < ring.numPixels(); i++){
+    ring.setPixelColor(i, 0, 0, 255, 150);
     ring.show();
-    delay(50);
+    delay(100);
   }
+  delay(100);
+
+   //for loop that runs for however many pixel leds there is (16 in this case), runs all individual LEDs sequentially and turns them off in the same order as previous loop
+  for(int i = 0; i < ring.numPixels(); i++){
+    ring.setPixelColor(i, 0, 0, 0, 0);
+    ring.show();
+    delay(100);
+  }
+
 
 
   //NFC Code (Reading and printing the UID)-----------------------------------------------------------------------------
@@ -93,46 +90,60 @@ void loop() {
 
   success = nfc.readPassiveTargetID(PN532_MIFARE_ISO14443A, uid, &uidLength);
 
-  if (success) {
-    //information is displayed regarding the detected card
-    Serial.print("ISO14443A Tag Detected!");
-    Serial.print(" UID Length: "); Serial.print(uidLength, DEC); Serial.println("Bytes");
-    Serial.print(" UID Value: ");
-    nfc.PrintHex(uid, uidLength);
-    Serial.print("");
-  }
-
- //different types of tags have different lengths of UID this checks the length is 7bytes which is common to NTA203 tags
-  if (uidLength == 7) {
-    uint8_t data[32];
-    
-    Serial.println("Tag appears to be an NTA203 tag");
-  }
-
-
-
 //Logic system Depending on tags UID----------------------------------------------------------------------------
   
   //piezo state logic
   val = analogRead(0); //reads the current value of the piezo
 
-  if ( val > 5 ) { //checks if the current value is above the threshold
+  if ( val > 3 ) { //checks if the current value is above the threshold
     Pressed = true;
     piezoStateChange = true;
   }
 
 
-  if ( val < 5 ) {
+  if ( val < 3 ) {
     Pressed = false;
     piezoStateChange = true;
   }
   
   if ((uid == "(Place UID Here)") && (piezoStateChange == true) &&(piezoStateChange == true)) {
 
-    //place led colour change and max subpatch route
+
+    //Sends message to max of what input to use
     Serial.println(1);
     delay(300);
 
+    //LED Rings flash between Orange and white
+    if (flashOnce != true) {
+      ring.fill(ring.Color(255, 165, 0));
+      ring.show();
+      delay(150);
+
+      ring.fill(ring.Color(0, 0, 0));
+      ring.show();
+      delay(150);
+
+      ring.fill(ring.Color(255, 165, 0));
+      ring.show();
+      delay(150);
+
+      ring.fill(ring.Color(0, 0, 0));
+      ring.show();
+      delay(150);
+      flashOnce = true;
+    }
+  
+    for(int i = 0; i < ring.numPixels(); i++){
+      ring.setPixelColor(i, 225, 165, 0, 150);
+      ring.show();
+      delay(100);
+    }
+    delay(100);
+    for(int i = 0; i < ring.numPixels(); i++){
+      ring.setPixelColor(i, 0, 0, 0, 0);
+      ring.show();
+      delay(100);
+    }
   }
 
   else if (uid == "(Place UID Here)" && piezoStateChange == true) {
