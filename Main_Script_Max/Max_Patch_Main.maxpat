@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 134.0, 167.0, 1213.0, 642.0 ],
+		"rect" : [ 34.0, 96.0, 1373.0, 763.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
@@ -862,6 +862,341 @@
 						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-55",
+									"linecount" : 5,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 1.136363625526428, 83.409089922904968, 90.909090042114258, 74.0 ],
+									"text" : "Sets the order of operations of the modulation system (from right to left)."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-53",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 98.840908288955688, 96.454544544219971, 56.818181276321411, 20.0 ],
+									"text" : "--------->"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-52",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 4,
+									"outlettype" : [ "bang", "bang", "bang", "bang" ],
+									"patching_rect" : [ 157.954543948173523, 95.454544544219971, 52.0, 22.0 ],
+									"text" : "t b b b b"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-51",
+									"linecount" : 4,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 244.318179488182068, 553.409085631370544, 150.0, 60.0 ],
+									"text" : "Simple Amplitude Modualtion using the random value assigned from the generator.",
+									"textjustification" : 1
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-48",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 162.499998450279236, 553.409085631370544, 56.818181276321411, 20.0 ],
+									"text" : "<---------"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-47",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 155.681816697120667, 423.863632321357727, 56.818181276321411, 20.0 ],
+									"text" : "<---------"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-46",
+									"linecount" : 4,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 232.954543232917786, 423.863632321357727, 150.0, 60.0 ],
+									"text" : "State variable filter used for modulation with cutoff frequency determined by random value.",
+									"textjustification" : 1
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-44",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 504.545449733734131, 288.636360883712769, 45.454545021057129, 20.0 ],
+									"text" : "<------"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-43",
+									"linecount" : 3,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 549.99999475479126, 274.99999737739563, 128.409089684486389, 47.0 ],
+									"text" : "Changes the Rate of Playback of sfplay for modulation purpsoes. "
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-41",
+									"linecount" : 3,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 185.2272709608078, 149.999998569488525, 150.0, 47.0 ],
+									"text" : "Sends random value when number is satisfied in sel.",
+									"textjustification" : 1
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-39",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 342.045451283454895, 157.954543948173523, 56.818181276321411, 20.0 ],
+									"text" : "--------->"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-38",
+									"linecount" : 5,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 1027.272717475891113, 157.954543948173523, 150.0, 74.0 ],
+									"text" : "Scales the randomness to different max/min values to adhere to specific range requirements based on the parameter used .",
+									"textjustification" : 1
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-36",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 948.863627314567566, 198.863634467124939, 63.63636302947998, 20.0 ],
+									"text" : "<---------"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-35",
+									"linecount" : 5,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 957.954536318778992, 311.363633394241333, 150.0, 74.0 ],
+									"text" : "Converts the number to audio signal for routing into parameters for modulating activation sound.",
+									"textjustification" : 1
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-32",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 879.545446157455444, 307.954542517662048, 63.63636302947998, 20.0 ],
+									"text" : "<---------"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-31",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 913.636354923248291, 246.590906739234924, 63.63636302947998, 20.0 ],
+									"text" : "<---------"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-30",
+									"linecount" : 4,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 1010.22726309299469, 245.454543113708496, 150.0, 60.0 ],
+									"text" : "This shows outputted Randomised Values being sent through the audio route of the wav. ",
+									"textjustification" : 1
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-28",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 419.318177819252014, 285.227270007133484, 77.0, 22.0 ],
+									"text" : "prepend rate"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-19",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 828.409083008766174, 157.954543948173523, 73.0, 22.0 ],
+									"text" : "random 100"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-21",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 828.409083008766174, 306.81817889213562, 31.0, 22.0 ],
+									"text" : "sig~"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-24",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 369.318178296089172, 103.409089922904968, 188.0, 20.0 ],
+									"text" : "Random Pitch Generation ",
+									"textjustification" : 1
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"format" : 6,
+									"id" : "obj-25",
+									"maxclass" : "flonum",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 828.409083008766174, 245.454543113708496, 72.259999999999991, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-26",
+									"maxclass" : "newobj",
+									"numinlets" : 6,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 828.409083008766174, 198.863634467124939, 110.0, 22.0 ],
+									"text" : "scale 0 100 0.9 1.2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-17",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 679.545448064804077, 157.954543948173523, 73.0, 22.0 ],
+									"text" : "random 100"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-13",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 419.318177819252014, 157.954543948173523, 73.0, 22.0 ],
+									"text" : "random 100"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-12",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 679.545448064804077, 306.81817889213562, 31.0, 22.0 ],
+									"text" : "sig~"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-8",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 112.499998927116394, 552.272722005844116, 29.5, 22.0 ],
+									"text" : "*~"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "newobj",
+									"numinlets" : 3,
+									"numoutlets" : 4,
+									"outlettype" : [ "signal", "signal", "signal", "signal" ],
+									"patching_rect" : [ 90.909090042114258, 422.727268695831299, 50.5, 22.0 ],
+									"text" : "svf~"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"format" : 6,
 									"id" : "obj-33",
 									"maxclass" : "flonum",
@@ -869,7 +1204,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 491.0, 252.0, 82.0, 22.0 ]
+									"patching_rect" : [ 419.318177819252014, 245.454543113708496, 82.0, 22.0 ]
 								}
 
 							}
@@ -879,8 +1214,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 433.0, 83.0, 172.0, 20.0 ],
-									"text" : "Random Volume Generation "
+									"patching_rect" : [ 805.68181049823761, 103.409089922904968, 172.0, 20.0 ],
+									"text" : "Random Volume Generation ",
+									"textjustification" : 1
 								}
 
 							}
@@ -890,8 +1226,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 667.0, 83.0, 188.0, 20.0 ],
-									"text" : "Random Frequency Generation "
+									"patching_rect" : [ 609.090903282165527, 103.409089922904968, 188.0, 20.0 ],
+									"text" : "Random Frequency Generation ",
+									"textjustification" : 1
 								}
 
 							}
@@ -902,8 +1239,8 @@
 									"numinlets" : 6,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 491.0, 205.0, 103.0, 22.0 ],
-									"text" : "scale 0 127 0.7 1."
+									"patching_rect" : [ 419.318177819252014, 198.863634467124939, 110.0, 22.0 ],
+									"text" : "scale 0 100 0.8 1.2"
 								}
 
 							}
@@ -916,7 +1253,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 703.0, 252.0, 72.259999999999991, 22.0 ]
+									"patching_rect" : [ 679.545448064804077, 245.454543113708496, 72.259999999999991, 22.0 ]
 								}
 
 							}
@@ -927,32 +1264,8 @@
 									"numinlets" : 6,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 703.0, 205.0, 123.0, 22.0 ],
-									"text" : "scale 0 100 20 20000"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-13",
-									"maxclass" : "newobj",
-									"numinlets" : 3,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 491.0, 155.0, 72.0, 22.0 ],
-									"text" : "drunk 100 5"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-5",
-									"maxclass" : "newobj",
-									"numinlets" : 3,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 703.0, 156.0, 72.0, 22.0 ],
-									"text" : "drunk 100 5"
+									"patching_rect" : [ 679.545448064804077, 198.863634467124939, 130.0, 22.0 ],
+									"text" : "scale 0 100 2000 8000"
 								}
 
 							}
@@ -964,7 +1277,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 1,
-									"patching_rect" : [ 158.5, 156.0, 15.0, 15.0 ],
+									"patching_rect" : [ 158.454543948173523, 216.954543948173523, 15.0, 15.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
 											"parameter_enum" : [ "off", "on" ],
@@ -988,7 +1301,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 158.0, 109.0, 34.0, 22.0 ],
+									"patching_rect" : [ 157.954543948173523, 55.681817650794983, 34.0, 22.0 ],
 									"text" : "sel 1"
 								}
 
@@ -1000,35 +1313,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 93.0, 164.0, 35.0, 22.0 ],
+									"patching_rect" : [ 90.909090042114258, 223.86363422870636, 35.0, 22.0 ],
 									"text" : "open"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-4",
-									"lastchannelcount" : 0,
-									"maxclass" : "live.gain~",
-									"numinlets" : 2,
-									"numoutlets" : 5,
-									"outlettype" : [ "signal", "signal", "", "float", "list" ],
-									"parameter_enable" : 1,
-									"patching_rect" : [ 93.0, 279.0, 48.0, 136.0 ],
-									"saved_attribute_attributes" : 									{
-										"valueof" : 										{
-											"parameter_longname" : "live.gain~",
-											"parameter_mmax" : 6.0,
-											"parameter_mmin" : -70.0,
-											"parameter_modmode" : 3,
-											"parameter_shortname" : "live.gain~",
-											"parameter_type" : 0,
-											"parameter_unitstyle" : 4
-										}
-
-									}
-,
-									"varname" : "live.gain~"
 								}
 
 							}
@@ -1038,8 +1324,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 177.0, 228.0, 80.0, 20.0 ],
-									"text" : "<------------- "
+									"patching_rect" : [ 155.681816697120667, 288.636360883712769, 56.818181276321411, 20.0 ],
+									"text" : "<---------"
 								}
 
 							}
@@ -1050,8 +1336,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 280.0, 191.0, 150.0, 87.0 ],
-									"text" : "This plays a wav file from the disk. Done to keep signature sound and added modulation to increase variability in the pressing. "
+									"patching_rect" : [ 221.590906977653503, 223.86363422870636, 150.0, 87.0 ],
+									"text" : "This plays a wav file from the disk. Done to keep signature sound and added modulation to increase variability in the pressing. ",
+									"textjustification" : 1
 								}
 
 							}
@@ -1062,7 +1349,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "bang" ],
-									"patching_rect" : [ 93.0, 227.0, 47.0, 22.0 ],
+									"patching_rect" : [ 90.909090042114258, 287.49999725818634, 47.0, 22.0 ],
 									"text" : "sfplay~"
 								}
 
@@ -1075,7 +1362,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 92.783499956130981, 444.329872012138367, 30.0, 30.0 ]
+									"patching_rect" : [ 112.499998927116394, 612.499994158744812, 30.0, 30.0 ]
 								}
 
 							}
@@ -1088,7 +1375,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 158.0, 48.0, 30.0, 30.0 ]
+									"patching_rect" : [ 157.954543948173523, 5.681818127632141, 30.0, 30.0 ]
 								}
 
 							}
@@ -1097,6 +1384,14 @@
 								"patchline" : 								{
 									"destination" : [ "obj-16", 0 ],
 									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-6", 1 ],
+									"midpoints" : [ 689.045448064804077, 390.394525408744812, 116.159090042114258, 390.394525408744812 ],
+									"source" : [ "obj-12", 0 ]
 								}
 
 							}
@@ -1116,25 +1411,22 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-13", 0 ],
-									"order" : 1,
+									"destination" : [ "obj-12", 0 ],
+									"source" : [ "obj-15", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-52", 0 ],
 									"source" : [ "obj-16", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-22", 0 ],
-									"order" : 2,
-									"source" : [ "obj-16", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-5", 0 ],
-									"order" : 0,
-									"source" : [ "obj-16", 0 ]
+									"destination" : [ "obj-14", 0 ],
+									"source" : [ "obj-17", 0 ]
 								}
 
 							}
@@ -1147,36 +1439,110 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-26", 0 ],
+									"source" : [ "obj-19", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-8", 1 ],
+									"midpoints" : [ 837.909083008766174, 390.839837908744812, 132.499998927116394, 390.839837908744812 ],
+									"source" : [ "obj-21", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
+									"midpoints" : [ 167.454543948173523, 258.999994158744812, 100.409090042114258, 258.999994158744812 ],
 									"source" : [ "obj-22", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-21", 0 ],
+									"source" : [ "obj-25", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-25", 0 ],
+									"source" : [ "obj-26", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"midpoints" : [ 428.818177819252014, 326.25578238395974, 147.445311427116394, 326.25578238395974, 147.445311427116394, 277.499994158744812, 100.409090042114258, 277.499994158744812 ],
+									"source" : [ "obj-28", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-22", 0 ],
+									"midpoints" : [ 128.409090042114258, 318.999994158744812, 147.499998927116394, 318.999994158744812, 147.499998927116394, 205.999994158744812, 167.454543948173523, 205.999994158744812 ],
 									"source" : [ "obj-3", 1 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-4", 0 ],
+									"destination" : [ "obj-6", 0 ],
 									"source" : [ "obj-3", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-2", 0 ],
-									"source" : [ "obj-4", 0 ]
+									"destination" : [ "obj-28", 0 ],
+									"source" : [ "obj-33", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-14", 0 ],
-									"source" : [ "obj-5", 0 ]
+									"destination" : [ "obj-13", 0 ],
+									"source" : [ "obj-52", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-17", 0 ],
+									"source" : [ "obj-52", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-19", 0 ],
+									"source" : [ "obj-52", 3 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-22", 0 ],
+									"source" : [ "obj-52", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-8", 0 ],
+									"source" : [ "obj-6", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-2", 0 ],
+									"source" : [ "obj-8", 0 ]
 								}
 
 							}
@@ -1313,8 +1679,9 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 316.0, 191.0, 667.0, 734.0 ],
+						"rect" : [ 368.0, 122.0, 667.0, 734.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-142",
@@ -1322,10 +1689,10 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 558.536598682403564, 485.365865230560303, 153.0, 89.0 ],
+									"patching_rect" : [ 558.536598682403564, 485.365865230560303, 153.0, 87.0 ],
 									"presentation" : 1,
 									"presentation_linecount" : 4,
-									"presentation_rect" : [ 419.999959945678711, 234.499974489212036, 240.0, 62.0 ],
+									"presentation_rect" : [ 419.999959945678711, 234.499974489212036, 240.0, 60.0 ],
 									"text" : "each state variable filter is set to a different freq - some use LPF, some HPF, some Band Pass, and all of them use a combination of at least 2"
 								}
 
@@ -1527,7 +1894,7 @@
 									"patching_rect" : [ 901.219533681869507, 96.341465711593628, 48.0, 22.0 ],
 									"presentation" : 1,
 									"presentation_linecount" : 2,
-									"presentation_rect" : [ 197.499981164932251, 294.999971866607666, 41.0, 36.0 ],
+									"presentation_rect" : [ 197.499981164932251, 294.999971866607666, 41.0, 35.0 ],
 									"text" : "del 160"
 								}
 
@@ -1539,10 +1906,10 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 1009.756121635437012, 369.512203931808472, 150.0, 34.0 ],
+									"patching_rect" : [ 1009.756121635437012, 369.512203931808472, 150.0, 33.0 ],
 									"presentation" : 1,
 									"presentation_linecount" : 2,
-									"presentation_rect" : [ 303.749971032142639, 401.749963402748108, 150.0, 34.0 ],
+									"presentation_rect" : [ 303.749971032142639, 401.749963402748108, 150.0, 33.0 ],
 									"text" : "Crackling - modified from other subpatch"
 								}
 
@@ -1670,10 +2037,10 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 1102.439050674438477, 136.585369110107422, 152.0, 48.0 ],
+									"patching_rect" : [ 1102.439050674438477, 136.585369110107422, 152.0, 47.0 ],
 									"presentation" : 1,
 									"presentation_linecount" : 3,
-									"presentation_rect" : [ 589.999943733215332, 366.499962568283081, 152.0, 48.0 ],
+									"presentation_rect" : [ 589.999943733215332, 366.499962568283081, 152.0, 47.0 ],
 									"text" : "times crackling to only last 2s - resets toggle back to 0 (off)"
 								}
 
@@ -1685,10 +2052,10 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 87.804880142211914, 443.902449607849121, 155.0, 62.0 ],
+									"patching_rect" : [ 87.804880142211914, 443.902449607849121, 155.0, 60.0 ],
 									"presentation" : 1,
 									"presentation_linecount" : 3,
-									"presentation_rect" : [ 170.499987363815308, 241.499974489212036, 200.0, 48.0 ],
+									"presentation_rect" : [ 170.499987363815308, 241.499974489212036, 200.0, 47.0 ],
 									"text" : " 'whooshing' sound uses 3 filters, 2 of which are delayed, to emphasize rise and fall of amplitude"
 								}
 
@@ -2636,6 +3003,7 @@
 						"classnamespace" : "box",
 						"rect" : [ 134.0, 165.0, 1213.0, 642.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-15",
@@ -5524,7 +5892,6 @@
  ],
 		"parameters" : 		{
 			"obj-24::obj-22" : [ "live.toggle", "live.toggle", 0 ],
-			"obj-24::obj-4" : [ "live.gain~", "live.gain~", 0 ],
 			"obj-44::obj-22" : [ "live.toggle[1]", "live.toggle", 0 ],
 			"obj-44::obj-4" : [ "live.gain~[1]", "live.gain~", 0 ],
 			"parameterbanks" : 			{
