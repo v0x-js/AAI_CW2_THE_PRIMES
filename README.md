@@ -1,16 +1,19 @@
 # AAI_CW2_THE_PRIMES
-This is 'THE PRIMES' Audio and Interactivity CW2 Project. We have built a recreation of the 'Ultamatrix' seen in Ben 10, featuring custom sound effects for usage of the watch, and a voice changer that corresponds to the chosen monster. 
+This is 'THE PRIMES' Audio and Interactivity CW2 Project. We have built a recreation of the 'Ultamatrix' seen in Ben 10, featuring custom sound effects for usage of the watch, and a voice changer that corresponds to the chosen monster. These monsters are selected via a PN532 RFID scanner and 4 corresponding tags (3 of which correspond to our monsters, and one of which is a clear tag.)
 
 ------
 EXPLANATION OF FILES AND FOLDERS - 
-Audio Files - 
- - ultamatrix_timeout.mp3 - used when no NFC tag is used 
-Main_Script_Arduino - 
+Main_Script_Arduino 
  - Main_Script_Arduino - all main arduino code 
- - PiezoComTest - testing arduino code for troubleshooting the pressure sensor logic
- - RFID_BaseCode_Backup - initial coding for RFID shield use with arduino
+ - piezo_baseCode (made a subfolder as errors were encountered when all arduino scripts were in 1 folder)
+ - - piezoComTest - testing arduino code for troubleshooting the pressure sensor logic
+ - PN532_baseCode (subfolder made for same reason as piezoComTest)
+ - - PN532_baseCode - initial coding for RFID shield use with arduino, kept for backups
  Main_Script_Max - 
- - Max_Patch_Main - all max code that arduino code will run into
+ - Max_Patch_Main - all max code that arduino code will run into - includes multiple subpatches for 
+ - Audio Files 
+ - - ultamatrix_timeout.mp3 - used if the sensor is hit after the 'clear' tag was scanned 
+ - - [REDACTED].wav - used for boot up for [REDACTED]
 
 ------
 INSPIRATIONS AND RESOURCES -
