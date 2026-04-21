@@ -70,13 +70,12 @@ void idleLED(){
   ring.show();
   delay(100);
   }
-  delay(100);
   //for loop that runs for however many pixel leds there is (16 in this case), runs all individual LEDs sequentially and turns them off in the same order as previous loop
-  for(int j = 0; j < ring.numPixels(); j++){
-    ring.setPixelColor(j, ring.Color(0, 0, 0));
-    ring.show();
-    delay(100);
-  }
+  //for(int j = 0; j < ring.numPixels(); j++){
+    //ring.setPixelColor(j, ring.Color(0, 0, 0));
+    //ring.show();
+    //delay(100);
+  //}
 }
 
 void selectedLED(uint32_t color) {
@@ -106,13 +105,14 @@ void selectedLED(uint32_t color) {
       ring.show();
       delay(100);
     }
-    delay(100);
-    for(int i = 0; i < ring.numPixels(); i++){
-      ring.setPixelColor(i, ring.Color(0, 0, 0));
-      ring.show();
-      delay(100);
-    }
-  }
+}
+    //delay(100);
+    //for(int i = 0; i < ring.numPixels(); i++){
+      //ring.setPixelColor(i, ring.Color(0, 0, 0));
+      //ring.show();
+      //delay(100);
+    //}
+  //}
 
 
 
@@ -151,7 +151,7 @@ void loop() {
 
 //-----------------------------------------------------------------------------------------------------------------------------
 
-  if ((uid == "(Place UID Here)") && (piezoStateChange == true) &&(piezoStateChange == true)) {
+  if ((uid == 0xD6 0xAB 0xD6 0xFF) && (piezoStateChange == true) &&(piezoStateChange == true)) {
 
     selectedLED(ring.Color(225, 165, 0));
 
@@ -162,7 +162,7 @@ void loop() {
     //LED Rings flash between Orange and white
   }
 
-  else if (uid == "(Place UID Here)" && piezoStateChange == true) {
+  else if (uid == "" && piezoStateChange == true) {
     //place LED Ring colour change and max subpatch route
     Serial.println(2);
     delay(300);
