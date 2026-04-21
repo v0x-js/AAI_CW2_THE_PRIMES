@@ -18,6 +18,16 @@
 
 Adafruit_PN532 nfc(PN532_IRQ, PN532_RESET); //defining the relationship/connection between the arduino board and the PN532
 
+uint8_t uidOptimus[] = {0x7A, 0xA1, 0x1A, 0xA3};
+uint8_t uidHeatblast[] = {0xD6, 0x19, 0xF3, 0xFF};
+uint8_t uidAlienX[] = {0xBA, 0x3E, 0x3A, 0xA3};
+uint8_t uidClear[] = {0xD6, 0xAB, 0xD6, 0xFF};
+
+bool optimusMatch = false;
+bool heatblastMatch = false;
+bool alienXMatch = false;
+bool clearMatch = false;
+
 
 //NeoPixel LED Definitions----------------------------------------------------------------
 #define LED_PIN 6
@@ -128,10 +138,33 @@ void loop() {
   //NFC Code (Reading and printing the UID)-----------------------------------------------------------------------------
 
   uint8_t success;
-  uint8_t uid[] = {0, 0, 0, 0, 0, 0, 0 }; //creates variable to store the tags UID
+  uint8_t uid[] = {0, 0, 0, 0}; //creates variable to store the tags UID
   uint8_t uidLength; //finds the legnth of the UID
 
   success = nfc.readPassiveTargetID(PN532_MIFARE_ISO14443A, uid, &uidLength);
+
+//a loop to see if the uid that is read matches any of the tags required for each alien or the clear tag
+  if (uidLength == 4 && success) {
+    bool match = true;
+    for (int i = 0; i < 4; i++) { // runs a loop for the length of the uid
+  
+      if (uid[i] == uidOptimus[i]) {
+        optimusMatch = true;
+      }
+      if (uid[i] == uidHeatblast[i]) {
+        heatblastMatch = true;
+      }
+      if (uid[i] == uidAlienX[i]) {
+        alienXMatch = true;
+      }
+      if (uid[i] == uidClear[i]) {
+        clearMatch = true;
+      }
+      if ((uid[i] != uidOptimus[i]) || (uid[i] != uidHeatblast[i]) || (uid[i] != uidAlienX[i]) || (uid[i] != uidClear[i])) {
+        match = false;
+      }
+    }
+  }
 
 //Logic system Depending on tags UID----------------------------------------------------------------------------
   
@@ -151,27 +184,30 @@ void loop() {
 
 //-----------------------------------------------------------------------------------------------------------------------------
 
-  if ((uid == 0xD6 0xAB 0xD6 0xFF) && (piezoStateChange == true) &&(piezoStateChange == true)) {
+  if (optimusMatch == true && piezoStateChange == true && piezoStateChange == true) {
 
-    selectedLED(ring.Color(225, 165, 0));
+    selectedLED(ring.Color(225, 120, 0));
 
     //Sends message to max of what input to use
     Serial.println(1);
+    Serial.println("optimus");
     delay(300);
-
+    uint8_t uid[] = {0, 0, 0, 0};
     //LED Rings flash between Orange and white
   }
 
-  else if (uid == "" && piezoStateChange == true) {
+  if (heatblastMatch == true && piezoStateChange == true) {
     //place LED Ring colour change and max subpatch route
+    selectedLED(ring.Color(0, 0, 225));
     Serial.println(2);
     delay(300);
-
+    Serial.println("heatblast");
+    uint8_t uid[] = {0, 0, 0, 0};
   }
 
-  else if (uid == "(Place UID Here)" && piezoStateChange == true) {
+  if (alienXMatch == true && piezoStateChange == true) {
     //place LED Ring colour change and max subpatch route
-    Serial.println(2);
+    Serial.println(3);
     delay(300);
   }
 }
