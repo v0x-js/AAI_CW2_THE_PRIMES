@@ -45,7 +45,7 @@ Adafruit_NeoPixel ring(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800); //number of LE
 
 
 //Piezo Definitons------------------------------------------------------------------------
-#define PIEZOTHRESHOLD 5;  // this is the analogue threshold for piezo sensing (subject to change on testing likley will be higher number)  
+#define PIEZOTHRESHOLD 2;  // this is the analogue threshold for piezo sensing (subject to change on testing likley will be higher number)  
 #define PADNUM 1 //1 pad in the analogue pins
 
 // setting default values for watch press + creating variables for watch press
@@ -256,12 +256,12 @@ void loop() {
   //piezo state logic -------------------------------------------------------------------------------------------------
   val = analogRead(0); //reads the current value of the piezo
 
-  if ( val > 3 ) { //checks if the current value is above the threshold
+  if ( val > 2 ) { //checks if the current value is above the threshold
     Pressed = true;
     piezoStateChange = true;
   }
 
-  if ( val < 3 ) {
+  if ( val < 2 ) {
     Pressed = false;
     piezoStateChange = true;
 
@@ -275,7 +275,7 @@ void loop() {
     optimusLED();
     Serial.println(1);
     delay(300);
-    Serial.println("optimus");
+   // Serial.println("optimus");
     //LED Rings flash between Orange and white
   }
 
@@ -284,14 +284,14 @@ void loop() {
     selectedLED(ring.Color(225, 120, 0));
     Serial.println(2);
     delay(300);
-    Serial.println("heatblast");
+    //Serial.println("heatblast");
   }
 
   if (alienXMatch == true && Pressed == true && piezoStateChange == true) {
     //place LED Ring colour change and max subpatch route
     selectedLED(ring.Color(225, 0, 255));
     Serial.println(3);
-    Serial.println("Alien X");
+    //Serial.println("Alien X");
     delay(300);
   }
 
@@ -300,7 +300,7 @@ void loop() {
     selectedLED(ring.Color(225, 0, 0));
     Serial.println(4);
     delay(300);
-    Serial.println("cleared");
+   // Serial.println("cleared");
   }
 }
 

@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 995.0, 85.0, 890.0, 912.0 ],
+		"rect" : [ 34.0, 77.0, 1852.0, 921.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
@@ -52,15 +52,16 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 59.0, 114.0, 1000.0, 686.0 ],
+						"rect" : [ -31958.0, -31915.0, 1000.0, 686.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-1",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 587.142871141433716, 211.428576469421387, 71.428573131561279, 20.0 ],
+									"patching_rect" : [ 582.0, 217.0, 71.428573131561279, 20.0 ],
 									"text" : "----------->"
 								}
 
@@ -72,7 +73,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 394.285723686218262, 187.142861604690552, 150.000003576278687, 60.0 ],
+									"patching_rect" : [ 389.0, 193.0, 150.000003576278687, 62.0 ],
 									"text" : "This metro is so that the serial function continues to poll for data being sent from the Arduino "
 								}
 
@@ -94,7 +95,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 610.000014543533325, 332.857150793075562, 50.000001192092896, 22.0 ],
+									"patching_rect" : [ 605.0, 339.0, 50.000001192092896, 22.0 ],
 									"text" : "10"
 								}
 
@@ -116,7 +117,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 765.714303970336914, 238.571434259414673, 32.0, 22.0 ],
+									"patching_rect" : [ 761.0, 245.0, 32.0, 22.0 ],
 									"text" : "print"
 								}
 
@@ -127,7 +128,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 521.428583860397339, 605.714300155639648, 75.714287519454956, 20.0 ],
+									"patching_rect" : [ 516.0, 612.0, 75.714287519454956, 20.0 ],
 									"text" : "------------->"
 								}
 
@@ -139,7 +140,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 348.571436882019043, 591.428585529327393, 150.000003576278687, 47.0 ],
+									"patching_rect" : [ 344.0, 597.0, 150.000003576278687, 48.0 ],
 									"text" : "Converts the MAXsymbol to a usable value for our audio path "
 								}
 
@@ -151,7 +152,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 684.285730600357056, 560.00001335144043, 71.428573131561279, 22.0 ],
+									"patching_rect" : [ 679.0, 566.0, 71.428573131561279, 22.0 ],
 									"text" : "fromsymbol"
 								}
 
@@ -162,7 +163,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 521.428583860397339, 531.428584098815918, 75.714287519454956, 20.0 ],
+									"patching_rect" : [ 516.0, 537.0, 75.714287519454956, 20.0 ],
 									"text" : "------------->"
 								}
 
@@ -174,7 +175,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 342.857151031494141, 532.857155561447144, 150.000003576278687, 33.0 ],
+									"patching_rect" : [ 338.0, 539.0, 150.000003576278687, 34.0 ],
 									"text" : "symbol of ASCI code in MAX "
 								}
 
@@ -196,7 +197,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 610.000014543533325, 530.000012636184692, 50.000001192092896, 22.0 ],
+									"patching_rect" : [ 605.0, 536.0, 50.000001192092896, 22.0 ],
 									"text" : "\"1\""
 								}
 
@@ -208,7 +209,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
-									"patching_rect" : [ 684.285730600357056, 482.857154369354248, 40.000000953674316, 22.0 ],
+									"patching_rect" : [ 679.0, 489.0, 40.000000953674316, 22.0 ],
 									"text" : "itoa"
 								}
 
@@ -219,7 +220,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 591.428585529327393, 294.285721302032471, 71.428573131561279, 20.0 ],
+									"patching_rect" : [ 586.0, 300.0, 71.428573131561279, 20.0 ],
 									"text" : "----------->"
 								}
 
@@ -231,7 +232,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 412.857152700424194, 287.142863988876343, 150.000003576278687, 33.0 ],
+									"patching_rect" : [ 408.0, 293.0, 150.000003576278687, 34.0 ],
 									"text" : "Serial Port for receiving values from Arduino "
 								}
 
@@ -242,7 +243,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 527.142869710922241, 455.714296579360962, 75.714287519454956, 20.0 ],
+									"patching_rect" : [ 522.0, 462.0, 75.714287519454956, 20.0 ],
 									"text" : "------------->"
 								}
 
@@ -254,7 +255,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 354.285722732543945, 448.571439266204834, 150.000003576278687, 47.0 ],
+									"patching_rect" : [ 349.0, 455.0, 150.000003576278687, 48.0 ],
 									"text" : "Still in ASCI code after termination of last 2 numbers received "
 								}
 
@@ -276,7 +277,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 610.000014543533325, 455.714296579360962, 50.000001192092896, 22.0 ],
+									"patching_rect" : [ 605.0, 462.0, 50.000001192092896, 22.0 ],
 									"text" : "49"
 								}
 
@@ -288,7 +289,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 684.285730600357056, 420.000010013580322, 81.428573369979858, 22.0 ],
+									"patching_rect" : [ 679.0, 426.0, 81.428573369979858, 22.0 ],
 									"text" : "zl group 1000"
 								}
 
@@ -300,7 +301,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "bang", "" ],
-									"patching_rect" : [ 684.285730600357056, 357.142865657806396, 57.142858505249023, 22.0 ],
+									"patching_rect" : [ 679.0, 363.0, 57.142858505249023, 22.0 ],
 									"text" : "sel 13 10"
 								}
 
@@ -312,7 +313,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 684.285730600357056, 211.428576469421387, 56.0, 22.0 ],
+									"patching_rect" : [ 679.0, 217.0, 56.0, 22.0 ],
 									"text" : "metro 33"
 								}
 
@@ -320,13 +321,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-27",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "int", "" ],
-									"patching_rect" : [ 684.285730600357056, 294.285721302032471, 85.714287757873535, 35.0 ],
-									"text" : "serial f 115200"
+									"patching_rect" : [ 679.0, 300.0, 90.0, 22.0 ],
+									"text" : "serial d 115200"
 								}
 
 							}
@@ -338,7 +338,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 684.285730600357056, 161.428575277328491, 24.285714864730835, 24.285714864730835 ]
+									"patching_rect" : [ 679.0, 167.0, 24.285714864730835, 24.285714864730835 ]
 								}
 
 							}
@@ -348,7 +348,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 825.714305400848389, 294.285721302032471, 68.571430206298828, 20.0 ],
+									"patching_rect" : [ 821.0, 300.0, 68.571430206298828, 20.0 ],
 									"text" : "<----------"
 								}
 
@@ -360,7 +360,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 920.000021934509277, 260.000006198883057, 150.000003576278687, 100.0 ],
+									"patching_rect" : [ 915.0, 266.0, 150.000003576278687, 103.0 ],
 									"text" : "We have sent data from Arduino NFC tags which decide which of the subpatches the microphone will be sent through for voice modulation "
 								}
 
@@ -373,7 +373,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 684.285730600357056, 698.571445226669312, 30.000000715255737, 30.000000715255737 ]
+									"patching_rect" : [ 679.0, 705.0, 30.000000715255737, 30.000000715255737 ]
 								}
 
 							}
@@ -388,7 +388,7 @@
 									"mode" : 1,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 282.857149600982666, 110.00000262260437, 865.714306354522705, 715.714302778244019 ],
+									"patching_rect" : [ 278.0, 116.0, 865.714306354522705, 715.714302778244019 ],
 									"proportion" : 0.5
 								}
 
@@ -1680,7 +1680,6 @@
 						"classnamespace" : "box",
 						"rect" : [ 35.0, 85.0, 890.0, 912.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-142",
