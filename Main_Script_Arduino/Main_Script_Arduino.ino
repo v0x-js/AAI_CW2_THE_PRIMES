@@ -264,12 +264,13 @@ void loop() {
   if ( val < 3 ) {
     Pressed = false;
     piezoStateChange = true;
+
   }
   
 
 //-----------------------------------------------------------------------------------------------------------------------------
 
-  if (optimusMatch == true && Pressed == true) {
+  if (optimusMatch == true && Pressed == true && piezoStateChange == true) {
 
     optimusLED();
     Serial.println(1);
@@ -278,7 +279,7 @@ void loop() {
     //LED Rings flash between Orange and white
   }
 
-  if (heatblastMatch == true && Pressed == true) {
+  if (heatblastMatch == true && Pressed == true && piezoStateChange == true) {
     //place LED Ring colour change and max subpatch route
     selectedLED(ring.Color(225, 120, 0));
     Serial.println(2);
@@ -286,7 +287,7 @@ void loop() {
     Serial.println("heatblast");
   }
 
-  if (alienXMatch == true && Pressed == true) {
+  if (alienXMatch == true && Pressed == true && piezoStateChange == true) {
     //place LED Ring colour change and max subpatch route
     selectedLED(ring.Color(225, 0, 255));
     Serial.println(3);
@@ -294,7 +295,7 @@ void loop() {
     delay(300);
   }
 
-  if (clearMatch == true && Pressed == true) {
+  if (clearMatch == true && Pressed == true && piezoStateChange == true) {
     //place LED Ring colour change and max subpatch route
     selectedLED(ring.Color(225, 0, 0));
     Serial.println(4);
