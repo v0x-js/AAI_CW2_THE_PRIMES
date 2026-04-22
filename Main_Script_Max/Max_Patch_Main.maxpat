@@ -834,7 +834,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1847.826102375984192, 397.101452589035034, 56.521739602088928, 20.0 ],
+					"patching_rect" : [ 1855.0, 396.101452589035034, 56.521739602088928, 20.0 ],
 					"text" : "<---------"
 				}
 
@@ -868,12 +868,13 @@
 			}
 , 			{
 				"box" : 				{
+					"bubble_outlinecolor" : [ 0.105882352941176, 0.752941176470588, 0.023529411764706, 0.01 ],
 					"fontsize" : 18.0,
 					"id" : "obj-33",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 130.0, 130.0, 220.0, 27.0 ],
+					"patching_rect" : [ 126.0, 131.5, 220.0, 27.0 ],
 					"text" : "Voice Modulation ",
 					"textjustification" : 1
 				}
@@ -2996,10 +2997,56 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 134.0, 167.0, 1213.0, 642.0 ],
+						"rect" : [ 134.0, 167.0, 1302.0, 642.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"visible" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-18",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 893.0, 440.0, 53.0, 20.0 ],
+									"text" : "<-------- "
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-13",
+									"linecount" : 6,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 960.0, 407.5, 150.0, 87.0 ],
+									"text" : "loadmess object sets the gain volumes for each of the different pitchshifts in order to make modulation seamless and accurate over multiple days "
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-11",
+									"linecount" : 10,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 1143.0, 246.0, 150.0, 141.0 ],
+									"text" : "This pitchshifts the audio sent in order to give a low end sound for [REDACTED]'s sound, more of a deep low end fusion with a metallic base used in the state variable filters, blended to give more presence in the modulated signal"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-9",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 1071.0, 292.0, 53.0, 20.0 ],
+									"text" : "<-------- "
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-7",
 									"maxclass" : "newobj",
@@ -3042,8 +3089,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 154.0, 440.0, 82.0, 22.0 ],
-									"text" : "loadmess 110"
+									"patching_rect" : [ 154.0, 440.0, 83.0, 22.0 ],
+									"text" : "loadmess 130"
 								}
 
 							}
@@ -3102,9 +3149,81 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 134.0, 164.0, 1000.0, 686.0 ],
+										"rect" : [ 141.0, 125.0, 1000.0, 686.0 ],
 										"gridsize" : [ 15.0, 15.0 ],
+										"visible" : 1,
 										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-14",
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 624.0, 398.0, 53.0, 20.0 ],
+													"text" : "<-------- "
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-11",
+													"linecount" : 7,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 682.0, 370.0, 150.0, 100.0 ],
+													"text" : "By adding a cos to both sides of the outputed phasor, it smooths the clipping of the signal and makes the transition much less perceptible in the conversion of the sound",
+													"textjustification" : 1
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-8",
+													"linecount" : 10,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 647.0, 129.0, 150.0, 141.0 ],
+													"text" : "The +~ 0.5  makes it so that the modulation doesn't phase in and out and create a wah sound by applying the phasor to 180 degrees of the original waveform. This makes for a more balanced output for the voice. ",
+													"textjustification" : 1
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-6",
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 573.34625200000005, 169.0, 53.0, 20.0 ],
+													"text" : "<-------- "
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-9",
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 230.0, 124.0, 63.0, 20.0 ],
+													"text" : "----------> "
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-2",
+													"linecount" : 5,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 55.0, 104.0, 150.0, 74.0 ],
+													"text" : "This is a Phasor/flanger effect added from the youtube video attatched in the Github and blog documentation"
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-5",
 													"maxclass" : "newobj",
