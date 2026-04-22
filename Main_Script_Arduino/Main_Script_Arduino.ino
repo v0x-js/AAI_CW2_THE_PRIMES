@@ -20,8 +20,13 @@ Adafruit_PN532 nfc(PN532_IRQ, PN532_RESET); //defining the relationship/connecti
 
 uint8_t uidOptimus[] = {0x7A, 0xA1, 0x1A, 0xA3};
 uint8_t uidHeatblast[] = {0xD6, 0x19, 0xF3, 0xFF};
-uint8_t uidAlienX[] = {0xBA, 0x3E, 0x3A, 0xA3};
+uint8_t uidAlienX[] = {0xE2, 0x00, 0x10, 0x10};
 uint8_t uidClear[] = {0xD6, 0xAB, 0xD6, 0xFF};
+
+//int optimusCount = 0;
+//int heatblastCount = 0;
+//int alienXCount = 0;
+//int clearCount = 0;
 
 bool optimusMatch = false;
 bool heatblastMatch = false;
@@ -58,7 +63,7 @@ void setup() {
   //LED Ring Setup------------------------------------------------------------------------------
   ring.begin(); //start the ring function
   ring.show(); //set up ability for LEDs to display
-  ring.setBrightness(50); //can go up to 255
+  ring.setBrightness(225); //can go up to 255
 
 
   //NFC/RFID Setup------------------------------------------------------------------------------
@@ -141,29 +146,68 @@ void loop() {
   uint8_t uid[] = {0, 0, 0, 0}; //creates variable to store the tags UID
   uint8_t uidLength; //finds the legnth of the UID
 
+  uint8_t optimusCount = 0;
+  uint8_t heatblastCount = 0;
+  uint8_t alienXCount = 0;
+  uint8_t clearCount = 0;
+
+
   success = nfc.readPassiveTargetID(PN532_MIFARE_ISO14443A, uid, &uidLength);
 
 //a loop to see if the uid that is read matches any of the tags required for each alien or the clear tag
   if (uidLength == 4 && success) {
     bool match = true;
+
     for (int i = 0; i < 4; i++) { // runs a loop for the length of the uid
-  
       if (uid[i] == uidOptimus[i]) {
-        optimusMatch = true;
+      optimusCount += 1;
       }
-      if (uid[i] == uidHeatblast[i]) {
-        heatblastMatch = true;
-      }
-      if (uid[i] == uidAlienX[i]) {
-        alienXMatch = true;
-      }
-      if (uid[i] == uidClear[i]) {
-        clearMatch = true;
-      }
-      if ((uid[i] != uidOptimus[i]) || (uid[i] != uidHeatblast[i]) || (uid[i] != uidAlienX[i]) || (uid[i] != uidClear[i])) {
-        match = false;
+      else {
+        optimusMatch = false;
       }
     }
+    
+    for (int i = 0; i < 4; i++) {
+      if (uid[i] == uidHeatblast[i]) {
+      heatblastCount += 1;
+      }
+      else {
+        heatblastMatch = false;
+      }
+    }
+
+    for (int i = 0; i < 4; i++) {
+      if (uid[i] == uidAlienX[i]) {
+      alienXCount += 1;
+      }
+      else{
+        alienXMatch = false;
+      }
+    }
+
+    for (int i = 0; i < 4; i++) {
+      if (uid[i] == uidClear[i]) {
+      
+      clearCount += 1;
+      }
+      else{
+        clearMatch = false;
+      }
+    }
+  }
+
+
+  if (optimusCount == 4){
+    optimusMatch = true;
+  }
+  if (heatblastCount == 4) {
+    heatblastMatch = true;
+  }
+  if (alienXCount == 4) {
+    alienXMatch = true;
+  }
+  if (clearCount == 4) {
+    clearMatch = true;
   }
 
 //Logic system Depending on tags UID----------------------------------------------------------------------------
@@ -184,19 +228,17 @@ void loop() {
 
 //-----------------------------------------------------------------------------------------------------------------------------
 
-  if (optimusMatch == true && piezoStateChange == true && piezoStateChange == true) {
+  if (optimusMatch == true && Pressed == true) {
 
     selectedLED(ring.Color(225, 120, 0));
-
-    //Sends message to max of what input to use
     Serial.println(1);
-    Serial.println("optimus");
     delay(300);
+    Serial.println("optimus");
     uint8_t uid[] = {0, 0, 0, 0};
     //LED Rings flash between Orange and white
   }
 
-  if (heatblastMatch == true && piezoStateChange == true) {
+  if (heatblastMatch == true && Pressed == true) {
     //place LED Ring colour change and max subpatch route
     selectedLED(ring.Color(0, 0, 225));
     Serial.println(2);
@@ -205,10 +247,21 @@ void loop() {
     uint8_t uid[] = {0, 0, 0, 0};
   }
 
-  if (alienXMatch == true && piezoStateChange == true) {
+  if (alienXMatch == true && Pressed == true) {
     //place LED Ring colour change and max subpatch route
+    selectedLED(ring.Color(30, 120, 255));
     Serial.println(3);
+    Serial.println("Alien X");
     delay(300);
+  }
+
+  if (clearMatch == true && Pressed == true) {
+    //place LED Ring colour change and max subpatch route
+    selectedLED(ring.Color(0, 225, 0));
+    Serial.println(4);
+    delay(300);
+    Serial.println("cleared");
+    uint8_t uid[] = {0, 0, 0, 0};
   }
 }
 
