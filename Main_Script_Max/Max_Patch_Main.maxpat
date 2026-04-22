@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 8,
+			"revision" : 7,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 96.0, 1373.0, 763.0 ],
+		"rect" : [ 995.0, 85.0, 890.0, 912.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
@@ -46,7 +46,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 8,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -508,7 +508,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 8,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -574,7 +574,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 8,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -807,7 +807,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1920.289871096611023, 344.927539110183716, 151.0, 127.0 ],
+					"patching_rect" : [ 1920.289871096611023, 344.927539110183716, 151.0, 131.0 ],
 					"text" : "These subpatches will be used for the purpose of implementating modulation of omnitrix activation noises and clean routing for interacting with Arduino IDE based on the alien chosen by the Ultimatrix ",
 					"textjustification" : 1
 				}
@@ -851,15 +851,14 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 8,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 134.0, 167.0, 1213.0, 642.0 ],
+						"rect" : [ 177.0, 175.0, 1213.0, 642.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-55",
@@ -867,7 +866,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 1.136363625526428, 83.409089922904968, 90.909090042114258, 74.0 ],
+									"patching_rect" : [ 1.136363625526428, 83.409089922904968, 95.0, 75.0 ],
 									"text" : "Sets the order of operations of the modulation system (from right to left)."
 								}
 
@@ -902,7 +901,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 244.318179488182068, 553.409085631370544, 150.0, 60.0 ],
+									"patching_rect" : [ 244.318179488182068, 553.409085631370544, 150.0, 62.0 ],
 									"text" : "Simple Amplitude Modualtion using the random value assigned from the generator.",
 									"textjustification" : 1
 								}
@@ -937,7 +936,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 232.954543232917786, 423.863632321357727, 150.0, 60.0 ],
+									"patching_rect" : [ 232.954543232917786, 423.863632321357727, 150.0, 62.0 ],
 									"text" : "State variable filter used for modulation with cutoff frequency determined by random value.",
 									"textjustification" : 1
 								}
@@ -961,7 +960,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 549.99999475479126, 274.99999737739563, 128.409089684486389, 47.0 ],
+									"patching_rect" : [ 549.99999475479126, 274.99999737739563, 128.409089684486389, 48.0 ],
 									"text" : "Changes the Rate of Playback of sfplay for modulation purpsoes. "
 								}
 
@@ -973,7 +972,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 185.2272709608078, 149.999998569488525, 150.0, 47.0 ],
+									"patching_rect" : [ 185.2272709608078, 149.999998569488525, 150.0, 48.0 ],
 									"text" : "Sends random value when number is satisfied in sel.",
 									"textjustification" : 1
 								}
@@ -997,7 +996,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 1027.272717475891113, 157.954543948173523, 150.0, 74.0 ],
+									"patching_rect" : [ 1027.272717475891113, 157.954543948173523, 153.0, 75.0 ],
 									"text" : "Scales the randomness to different max/min values to adhere to specific range requirements based on the parameter used .",
 									"textjustification" : 1
 								}
@@ -1021,7 +1020,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 957.954536318778992, 311.363633394241333, 150.0, 74.0 ],
+									"patching_rect" : [ 957.954536318778992, 311.363633394241333, 150.0, 75.0 ],
 									"text" : "Converts the number to audio signal for routing into parameters for modulating activation sound.",
 									"textjustification" : 1
 								}
@@ -1056,7 +1055,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 1010.22726309299469, 245.454543113708496, 150.0, 60.0 ],
+									"patching_rect" : [ 1010.22726309299469, 245.454543113708496, 151.0, 62.0 ],
 									"text" : "This shows outputted Randomised Values being sent through the audio route of the wav. ",
 									"textjustification" : 1
 								}
@@ -1336,7 +1335,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 221.590906977653503, 223.86363422870636, 150.0, 87.0 ],
+									"patching_rect" : [ 221.590906977653503, 223.86363422870636, 150.0, 89.0 ],
 									"text" : "This plays a wav file from the disk. Done to keep signature sound and added modulation to increase variability in the pressing. ",
 									"textjustification" : 1
 								}
@@ -1573,7 +1572,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 8,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1673,13 +1672,13 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 8,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 368.0, 122.0, 667.0, 734.0 ],
+						"rect" : [ 35.0, 85.0, 890.0, 912.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"visible" : 1,
 						"boxes" : [ 							{
@@ -1689,10 +1688,10 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 558.536598682403564, 485.365865230560303, 153.0, 87.0 ],
+									"patching_rect" : [ 558.536598682403564, 485.365865230560303, 153.0, 89.0 ],
 									"presentation" : 1,
 									"presentation_linecount" : 4,
-									"presentation_rect" : [ 419.999959945678711, 234.499974489212036, 240.0, 60.0 ],
+									"presentation_rect" : [ 419.999959945678711, 234.499974489212036, 240.0, 62.0 ],
 									"text" : "each state variable filter is set to a different freq - some use LPF, some HPF, some Band Pass, and all of them use a combination of at least 2"
 								}
 
@@ -1894,7 +1893,7 @@
 									"patching_rect" : [ 901.219533681869507, 96.341465711593628, 48.0, 22.0 ],
 									"presentation" : 1,
 									"presentation_linecount" : 2,
-									"presentation_rect" : [ 197.499981164932251, 294.999971866607666, 41.0, 35.0 ],
+									"presentation_rect" : [ 197.499981164932251, 294.999971866607666, 41.0, 36.0 ],
 									"text" : "del 160"
 								}
 
@@ -1906,10 +1905,10 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 1009.756121635437012, 369.512203931808472, 150.0, 33.0 ],
+									"patching_rect" : [ 1009.756121635437012, 369.512203931808472, 150.0, 34.0 ],
 									"presentation" : 1,
 									"presentation_linecount" : 2,
-									"presentation_rect" : [ 303.749971032142639, 401.749963402748108, 150.0, 33.0 ],
+									"presentation_rect" : [ 303.749971032142639, 401.749963402748108, 150.0, 34.0 ],
 									"text" : "Crackling - modified from other subpatch"
 								}
 
@@ -2037,10 +2036,10 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 1102.439050674438477, 136.585369110107422, 152.0, 47.0 ],
+									"patching_rect" : [ 1102.439050674438477, 136.585369110107422, 152.0, 48.0 ],
 									"presentation" : 1,
 									"presentation_linecount" : 3,
-									"presentation_rect" : [ 589.999943733215332, 366.499962568283081, 152.0, 47.0 ],
+									"presentation_rect" : [ 589.999943733215332, 366.499962568283081, 152.0, 48.0 ],
 									"text" : "times crackling to only last 2s - resets toggle back to 0 (off)"
 								}
 
@@ -2052,10 +2051,10 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 87.804880142211914, 443.902449607849121, 155.0, 60.0 ],
+									"patching_rect" : [ 87.804880142211914, 443.902449607849121, 155.0, 62.0 ],
 									"presentation" : 1,
 									"presentation_linecount" : 3,
-									"presentation_rect" : [ 170.499987363815308, 241.499974489212036, 200.0, 47.0 ],
+									"presentation_rect" : [ 170.499987363815308, 241.499974489212036, 200.0, 48.0 ],
 									"text" : " 'whooshing' sound uses 3 filters, 2 of which are delayed, to emphasize rise and fall of amplitude"
 								}
 
@@ -2977,7 +2976,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 781.159426808357239, 402.898554086685181, 151.0, 114.0 ],
+					"patching_rect" : [ 781.159426808357239, 402.898554086685181, 151.0, 117.0 ],
 					"text" : "These subpatches will be used for the purpose of implementating multiple voice changers and clean routing for interacting with Arduino IDE based on the alien chosen by the Ultimatrix ",
 					"textjustification" : 1
 				}
@@ -2995,7 +2994,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 8,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3003,7 +3002,6 @@
 						"classnamespace" : "box",
 						"rect" : [ 134.0, 165.0, 1213.0, 642.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-15",
@@ -3053,7 +3051,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 8,
+											"revision" : 7,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3912,7 +3910,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 8,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -4012,13 +4010,13 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 8,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 77.0, 1213.0, 642.0 ],
+						"rect" : [ 34.0, 77.0, 1852.0, 921.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
@@ -4508,7 +4506,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 35.9375, 639.0625, 47.0, 22.0 ],
-									"text" : "*~ 0.19"
+									"text" : "*~ 0.75"
 								}
 
 							}
@@ -4549,8 +4547,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 559.375, 545.3125, 40.0, 22.0 ],
-									"text" : "*~ 0.3"
+									"patching_rect" : [ 559.375, 545.3125, 30.0, 22.0 ],
+									"text" : "*~ 2"
 								}
 
 							}
@@ -4913,8 +4911,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 392.1875, 525.0, 47.0, 22.0 ],
-									"text" : "*~ 0.47"
+									"patching_rect" : [ 392.1875, 525.0, 40.0, 22.0 ],
+									"text" : "*~ 0.9"
 								}
 
 							}
