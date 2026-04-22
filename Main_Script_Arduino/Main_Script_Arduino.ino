@@ -37,7 +37,7 @@ bool clearMatch = false;
 //NeoPixel LED Definitions----------------------------------------------------------------
 #define LED_PIN 6
 #define LED_COUNT 16
-bool flashOnce = false;
+//bool flashOnce = false;
 bool idle = true;
 
 // create function for the LED ring
@@ -94,6 +94,8 @@ void idleLED(){
 }
 
 void selectedLED(uint32_t color) {
+
+  bool flashOnce = false;
   
    if (flashOnce != true) {
 
@@ -120,6 +122,7 @@ void selectedLED(uint32_t color) {
       ring.show();
       delay(100);
     }
+    delay(10000);
 }
     //delay(100);
     //for(int i = 0; i < ring.numPixels(); i++){
@@ -128,7 +131,45 @@ void selectedLED(uint32_t color) {
       //delay(100);
     //}
   //}
+void optimusLED() {
 
+  bool flash = false;
+  
+   if (flash != true) {
+
+      ring.fill(ring.Color(225, 0, 0));
+      ring.show();
+      delay(150);
+
+      ring.fill(ring.Color(0, 0, 225));
+      ring.show();
+      delay(150);
+
+      ring.fill(ring.Color(225, 0, 0));
+      ring.show();
+      delay(150);
+
+      ring.fill(ring.Color(0, 0, 225));
+      ring.show();
+      delay(150);
+
+      ring.fill(ring.Color(0, 0, 0));
+      flash = true;
+    }
+  
+    for(int i = 0; i < 7; i++){
+      ring.setPixelColor(i, ring.Color(225, 0, 0));
+      ring.show();
+      delay(500);
+    }
+    for(int i = 6; i < 16; i++) {
+      ring.setPixelColor(i+1, ring.Color(0, 0, 225));
+      ring.show();
+      delay(500);
+    }
+      delay(10000);
+    
+}
 
 
 //_____________________________________Main Code___________________________________________________
@@ -230,26 +271,24 @@ void loop() {
 
   if (optimusMatch == true && Pressed == true) {
 
-    selectedLED(ring.Color(225, 120, 0));
+    optimusLED();
     Serial.println(1);
     delay(300);
     Serial.println("optimus");
-    uint8_t uid[] = {0, 0, 0, 0};
     //LED Rings flash between Orange and white
   }
 
   if (heatblastMatch == true && Pressed == true) {
     //place LED Ring colour change and max subpatch route
-    selectedLED(ring.Color(0, 0, 225));
+    selectedLED(ring.Color(225, 120, 0));
     Serial.println(2);
     delay(300);
     Serial.println("heatblast");
-    uint8_t uid[] = {0, 0, 0, 0};
   }
 
   if (alienXMatch == true && Pressed == true) {
     //place LED Ring colour change and max subpatch route
-    selectedLED(ring.Color(30, 120, 255));
+    selectedLED(ring.Color(225, 0, 255));
     Serial.println(3);
     Serial.println("Alien X");
     delay(300);
@@ -257,11 +296,10 @@ void loop() {
 
   if (clearMatch == true && Pressed == true) {
     //place LED Ring colour change and max subpatch route
-    selectedLED(ring.Color(0, 225, 0));
+    selectedLED(ring.Color(225, 0, 0));
     Serial.println(4);
     delay(300);
     Serial.println("cleared");
-    uint8_t uid[] = {0, 0, 0, 0};
   }
 }
 
