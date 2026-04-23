@@ -18,7 +18,7 @@ Main_Script_Arduino
 ------
 INSPIRATIONS AND RESOURCES -
 - https://www.youtube.com/watch?v=wt5Srn2C0A4 - used for fire sound for heat blast 
-- previous coursework - APE CW2 was repurposed for reverb effect
+- previous coursework - Jamie's APE CW2 was repurposed for reverb effect
 - https://www.youtube.com/watch?v=wD7KHzpFBvw - inspiration for 'flame burst' on-hit effect
 - https://www.youtube.com/watch?v=uyzY_ZP54pA&list=PLD45EDA6F67827497&index=8 - used for [REDACTED] phaser 
 - https://learn.adafruit.com/adafruit-pn532-rfid-nfc/arduino-library - info on PN532 component use
@@ -26,3 +26,4 @@ INSPIRATIONS AND RESOURCES -
 - https://medium.com/@elonskolnik/arduino-uno-tutorial-neopixel-ring-setup-9fafc099c89a - Neopixel LED setup tutorial 
 - https://www.youtube.com/watch?v=8YCoigIOOxU - RFID video - watched when troubleshooting shield issues
 - https://www.youtube.com/watch?v=6bT3G4Mep7E - shows how to connect max and arduino code
+- previous coursework - Ella's APE CW2 was used for ring modulation and chorus
