@@ -12,7 +12,7 @@
 
 
 
-//NFC Definitions, defining the pins for the NFC Reader
+//NFC Definitions, defining the pins for the NFC Reader for i2c configuration
 #define PN532_IRQ (2)
 #define PN532_RESET (3)
 
@@ -23,11 +23,7 @@ uint8_t uidHeatblast[] = {0xD6, 0x19, 0xF3, 0xFF};
 uint8_t uidAlienX[] = {0xE2, 0x00, 0x10, 0x10};
 uint8_t uidClear[] = {0xD6, 0xAB, 0xD6, 0xFF};
 
-//int optimusCount = 0;
-//int heatblastCount = 0;
-//int alienXCount = 0;
-//int clearCount = 0;
-
+// Set to false by default
 bool optimusMatch = false;
 bool heatblastMatch = false;
 bool alienXMatch = false;
@@ -45,14 +41,14 @@ Adafruit_NeoPixel ring(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800); //number of LE
 
 
 //Piezo Definitons------------------------------------------------------------------------
-#define PIEZOTHRESHOLD 2;  // this is the analogue threshold for piezo sensing (subject to change on testing likley will be higher number)  
+#define PIEZOTHRESHOLD 0.5;  // this is the analogue threshold for piezo sensing (subject to change on testing likley will be higher number)  
 #define PADNUM 1 //1 pad in the analogue pins
 
 // setting default values for watch press + creating variables for watch press
 int val; // used to store value of current piezo sensor input to check if threshold for piezo sesnor is being exceeded or not
-bool Pressed = false; //variable to say if piezo is being pushed or released
-bool piezoPrevState = false;  //allows for comparison to previous state
-bool piezoStateChange = false; // has there been a change in the state - true or false
+ //variable to say if piezo is being pushed or released
+//bool piezoPrevState = false;  //allows for comparison to previous state
+ // has there been a change in the state - true or false
 
 //-----------------------------------------------------------------------------------------
 
@@ -63,7 +59,7 @@ void setup() {
   //LED Ring Setup------------------------------------------------------------------------------
   ring.begin(); //start the ring function
   ring.show(); //set up ability for LEDs to display
-  ring.setBrightness(225); //can go up to 255
+  ring.setBrightness(150); //can go up to 255
 
 
   //NFC/RFID Setup------------------------------------------------------------------------------
@@ -85,12 +81,6 @@ void idleLED(){
   ring.show();
   delay(100);
   }
-  //for loop that runs for however many pixel leds there is (16 in this case), runs all individual LEDs sequentially and turns them off in the same order as previous loop
-  //for(int j = 0; j < ring.numPixels(); j++){
-    //ring.setPixelColor(j, ring.Color(0, 0, 0));
-    //ring.show();
-    //delay(100);
-  //}
 }
 
 void selectedLED(uint32_t color) {
@@ -124,13 +114,8 @@ void selectedLED(uint32_t color) {
     }
     delay(10000);
 }
-    //delay(100);
-    //for(int i = 0; i < ring.numPixels(); i++){
-      //ring.setPixelColor(i, ring.Color(0, 0, 0));
-      //ring.show();
-      //delay(100);
-    //}
-  //}
+
+
 void optimusLED() {
 
   bool flash = false;
@@ -176,6 +161,7 @@ void optimusLED() {
 void loop() {
   // put your main code here, to run repeatedly:
 
+
   //Idle LED Ring------------------------------------------------------------------------------------------------------
   
   idleLED();
@@ -187,6 +173,7 @@ void loop() {
   uint8_t uid[] = {0, 0, 0, 0}; //creates variable to store the tags UID
   uint8_t uidLength; //finds the legnth of the UID
 
+  //used to make sure all four bytes of a tag match not just one as some uids have similar bytes
   uint8_t optimusCount = 0;
   uint8_t heatblastCount = 0;
   uint8_t alienXCount = 0;
@@ -254,32 +241,34 @@ void loop() {
 //Logic system Depending on tags UID----------------------------------------------------------------------------
   
   //piezo state logic -------------------------------------------------------------------------------------------------
+  bool Pressed = false;
+  bool piezoStateChange = false;
+
   val = analogRead(0); //reads the current value of the piezo
 
-  if ( val > 2 ) { //checks if the current value is above the threshold
+  if ( val > 0.5 ) { //checks if the current value is above the threshold
     Pressed = true;
     piezoStateChange = true;
   }
 
-  if ( val < 2 ) {
+  if ( val < 0.5 ) {
     Pressed = false;
     piezoStateChange = true;
-
   }
   
 
 //-----------------------------------------------------------------------------------------------------------------------------
 
-  if (optimusMatch == true && Pressed == true) {
+  if ((optimusMatch == true) && (Pressed == true)) {
 
     Serial.println(1);
     optimusLED();
     delay(300);
-   // Serial.println("optimus");
+    //Serial.println("optimus");
     //LED Rings flash between Orange and white
   }
 
-  if (heatblastMatch == true && Pressed == true) {
+  if ((heatblastMatch == true) && (Pressed == true)) {
 
     Serial.println(2);
     //place LED Ring colour change and max subpatch route
@@ -288,7 +277,7 @@ void loop() {
     //Serial.println("heatblast");
   }
 
-  if (alienXMatch == true && Pressed == true) {
+  if ((alienXMatch == true) && (Pressed == true)) {
 
     Serial.println(3);
     //place LED Ring colour change and max subpatch route
@@ -297,7 +286,7 @@ void loop() {
     delay(300);
   }
 
-  if (clearMatch == true && Pressed == true) {
+  if ((clearMatch == true) && (Pressed == true)) {
 
     Serial.println(4);
     //place LED Ring colour change and max subpatch route
