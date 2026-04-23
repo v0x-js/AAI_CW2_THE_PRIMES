@@ -41,8 +41,8 @@ Adafruit_NeoPixel ring(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800); //number of LE
 
 
 //Piezo Definitons------------------------------------------------------------------------
-#define PIEZOTHRESHOLD 0.5;  // this is the analogue threshold for piezo sensing (subject to change on testing likley will be higher number)  
-#define PADNUM 1 //1 pad in the analogue pins
+//#define PIEZOTHRESHOLD 0.2;  // this is the analogue threshold for piezo sensing (subject to change on testing likley will be higher number)  
+//#define PADNUM 1 //1 pad in the analogue pins
 
 // setting default values for watch press + creating variables for watch press
 int val; // used to store value of current piezo sensor input to check if threshold for piezo sesnor is being exceeded or not
@@ -239,27 +239,11 @@ void loop() {
   }
 
 //Logic system Depending on tags UID----------------------------------------------------------------------------
-  
-  //piezo state logic -------------------------------------------------------------------------------------------------
-  bool Pressed = false;
-  bool piezoStateChange = false;
 
-  val = analogRead(0); //reads the current value of the piezo
-
-  if ( val > 0.5 ) { //checks if the current value is above the threshold
-    Pressed = true;
-    piezoStateChange = true;
-  }
-
-  if ( val < 0.5 ) {
-    Pressed = false;
-    piezoStateChange = true;
-  }
-  
 
 //-----------------------------------------------------------------------------------------------------------------------------
 
-  if ((optimusMatch == true) && (Pressed == true)) {
+  if ((optimusMatch == true)) {
 
     Serial.println(1);
     optimusLED();
@@ -268,7 +252,7 @@ void loop() {
     //LED Rings flash between Orange and white
   }
 
-  if ((heatblastMatch == true) && (Pressed == true)) {
+  if ((heatblastMatch == true)) {
 
     Serial.println(2);
     //place LED Ring colour change and max subpatch route
@@ -277,7 +261,7 @@ void loop() {
     //Serial.println("heatblast");
   }
 
-  if ((alienXMatch == true) && (Pressed == true)) {
+  if ((alienXMatch == true)) {
 
     Serial.println(3);
     //place LED Ring colour change and max subpatch route
@@ -286,7 +270,7 @@ void loop() {
     delay(300);
   }
 
-  if ((clearMatch == true) && (Pressed == true)) {
+  if ((clearMatch == true)) {
 
     Serial.println(4);
     //place LED Ring colour change and max subpatch route
