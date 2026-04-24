@@ -26,4 +26,7 @@ INSPIRATIONS AND RESOURCES -
 - https://medium.com/@elonskolnik/arduino-uno-tutorial-neopixel-ring-setup-9fafc099c89a - Neopixel LED setup tutorial 
 - https://www.youtube.com/watch?v=8YCoigIOOxU - RFID video - watched when troubleshooting shield issues
 - https://www.youtube.com/watch?v=6bT3G4Mep7E - shows how to connect max and arduino code
+- https://www.tweaking4all.com/hardware/arduino/adruino-led-strip-effects/#LEDStripEffectSnowSparkle – used for Neopixel sequence inspiration and based a couple of the sequences off of code from here and the Arduino library examples
 - previous coursework - Ella's APE CW2 was used for ring modulation and chorus
+
+
