@@ -83,7 +83,7 @@ void idleLED(){
   }
 }
 
-void selectedLED(uint32_t color) {
+void timeoutLED(uint32_t color) {
 
   bool flashOnce = false;
   
@@ -154,6 +154,95 @@ void optimusLED() {
     }
       delay(10000);
     
+}
+
+void heatblastLED(){
+  bool flashOnce = false;
+  int speed = 30;
+
+  if (flashOnce != true) {
+
+      ring.fill(0,0, 0);
+      ring.show();
+      delay(150);
+
+      ring.fill(ring.Color(225, 34, 0));
+      ring.show();
+      delay(150);
+
+      ring.fill(0, 0, 0);
+      ring.show();
+      delay(150);
+
+      ring.fill(ring.Color(225, 34, 0));
+      ring.show();
+      delay(150);
+      flashOnce = true;
+    }
+
+  for (int i = 0; i <59;i++){
+    int pixel = random(LED_COUNT);
+    ring.setPixelColor(pixel, 225, 34, 0);
+    ring.show();
+    delay(20);
+    ring.setPixelColor(pixel, 225, random(0, 100), 0);
+    ring.show();
+    delay(speed);
+    
+    int pixelTwo = random(LED_COUNT);
+    ring.setPixelColor(pixelTwo, 225, 34, 0);
+    ring.show();
+    delay(20);
+    ring.setPixelColor(pixelTwo, random(150, 225), random(0, 50), 0);
+    ring.show();
+    delay(speed);
+    
+    int pixelThree = random(LED_COUNT);
+    ring.setPixelColor(pixelThree, 225, 34, 0);
+    ring.show();
+    delay(20);
+    ring.setPixelColor(pixelThree, random(150, 225), random(0, 50), 0);
+    ring.show();
+    delay(speed);
+  }
+}
+
+void alienXLED(){
+  bool flashOnce = false;
+
+  if (flashOnce != true) {
+
+      ring.fill(0,0, 0);
+      ring.show();
+      delay(150);
+
+      ring.fill(ring.Color(225, 0, 225));
+      ring.show();
+      delay(150);
+
+      ring.fill(0, 0, 0);
+      ring.show();
+      delay(150);
+
+      ring.fill(ring.Color(225, 0, 225));
+      ring.show();
+      delay(150);
+      flashOnce = true;
+    }
+  for (int i=0; i<16; i++) {  
+    for (int j=0; j < 3; j++) {
+      for (int k=0; k < LED_COUNT; k=k+3) {
+        ring.setPixelColor(k+j, 225,0,225);   
+      }
+      ring.show();
+     
+      delay(200);
+     
+      for (int k=0; k < LED_COUNT; k=k+3) {
+        ring.setPixelColor(k+j, 100,0,100);    
+      }
+    }
+  }
 }
 
 
@@ -256,7 +345,7 @@ void loop() {
 
     Serial.println(2);
     //place LED Ring colour change and max subpatch route
-    selectedLED(ring.Color(225, 120, 0));
+    heatblastLED();
     delay(300);
     //Serial.println("heatblast");
   }
@@ -265,7 +354,7 @@ void loop() {
 
     Serial.println(3);
     //place LED Ring colour change and max subpatch route
-    selectedLED(ring.Color(225, 0, 255));
+    alienXLED();
     //Serial.println("Alien X");
     delay(300);
   }
@@ -274,7 +363,7 @@ void loop() {
 
     Serial.println(4);
     //place LED Ring colour change and max subpatch route
-    selectedLED(ring.Color(225, 0, 0));
+    timeoutLED(ring.Color(225, 0, 0));
     delay(300);
    // Serial.println("cleared");
   }
